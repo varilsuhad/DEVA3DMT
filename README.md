@@ -1,8 +1,9 @@
 # 3DMTINV
 3D Magnetotelluric inversion code
 
+**Author** : Deniz Varilsuha
 
-
+**Email** : deniz.varilsuha@itu.edu.tr
 
 ## License
 
