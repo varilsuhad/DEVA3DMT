@@ -1,29 +1,13 @@
+
 # DEVA3DMT
-3D Magnetotelluric inversion code
-
-**Author** : Deniz Varilsuha
-
-**Email** : deniz.varilsuha@itu.edu.tr
-
-This work 
-
-## License
-
-DEVA3DMT is released under a **non-commercial research license**.
-Commercial use is prohibited without written permission from the author.
-See the [LICENSE](LICENSE) file for full terms.
-
-
-
-# DEVA3DMT (light version)
 
 DEVA3DMT is a 3-D magnetotelluric (MT) inversion framework based on
 a hybrid finite-element / finite-difference forward engine on
 hexahedral meshes and GPU-accelerated iterative solvers.  
 The original, full-featured code is described in:
 
-- Varılsüha (2020), *Geophysics* 85(5): E191–E205 :contentReference[oaicite:0]{index=0}  
-- Varılsüha (2024), *Computers & Geosciences* 188: 105614 :contentReference[oaicite:1]{index=1}  
+- Varılsüha (2020), *Geophysics* 85(5): E191–E205 
+- Varılsüha (2024), *Computers & Geosciences* 188: 105614
 
 This public repository contains a **lightweight, single-GPU version**
 of DEVA3DMT intended for research reproducibility and educational use.
@@ -34,6 +18,10 @@ If you are interested in **production-level 3-D MT inversion with
 all features enabled** (multi-GPU, mesh decoupling, GUI, etc.),
 please contact the author (see below).
 
+**Author** : Deniz Varılsüha
+
+**Email** : deniz.varilsuha@itu.edu.tr
+
 ---
 
 ## Main features
@@ -41,48 +29,48 @@ please contact the author (see below).
 ### Hybrid FE–FD forward modelling
 
 - Solves the 3-D MT forward problem using the **ungauged vector and
-  scalar potential formulation** (A–φ) on structured hexahedral meshes. :contentReference[oaicite:2]{index=2}  
+  scalar potential formulation** (A–φ) on structured hexahedral meshes. 
 - **Hybrid numerical engine (HYB)**:
   - Distorted hexahedra near topography are treated with
     edge-based finite elements.
   - Undistorted rectangular blocks are treated with a finite-difference
-    stencil assembled in an FE-like way. :contentReference[oaicite:3]{index=3}  
+    stencil assembled in an FE-like way. 
   - FE and FD contributions are combined into a single global sparse
-    matrix for each polarization. :contentReference[oaicite:4]{index=4}  
+    matrix for each polarization. 
 - The hybrid approach is **as accurate as pure FE**, but with
   substantially fewer nonzeros and lower memory footprint, enabling
-  larger models on a single GPU. :contentReference[oaicite:5]{index=5}  
+  larger models on a single GPU.
 
 ### Inversion capabilities
 
-The inversion engine follows the methodology in Varılsüha (2020). :contentReference[oaicite:6]{index=6}  
+The inversion engine follows the methodology in Varılsüha (2020) but in this version is updated to inexact Gauss-Newton (GN) algorithm. 
 
 - Minimizes a composite objective function combining
-  data misfit and model roughness, with optional distortion terms. :contentReference[oaicite:7]{index=7}  
-- Uses **L-BFGS** as the outer optimization algorithm for log-conductivity
-  and (optionally) distortion parameters, with an efficient line search. :contentReference[oaicite:8]{index=8}  
+  data misfit and model roughness, with optional distortion terms. 
+- Uses **inexact-GN** as the outer optimization algorithm for log-conductivity
+  and (optionally) distortion parameters,.
 - Forward and pseudo-forward problems are solved iteratively
-  (Krylov methods) and accelerated on a single GPU. :contentReference[oaicite:9]{index=9}  
+  (Krylov methods) and accelerated on a single GPU.
 
 #### Supported data types
 
-The inversion can work with several MT data representations: :contentReference[oaicite:10]{index=10}  
+The inversion can work with several MT data representations:
 
 - Impedance tensor **Z**  
 - Magnetic transfer functions (tipper) **W**  
 - Phase tensor **Φ** (impedance-based, distortion-free)  
 - Phase vector **Ψ** (MTF-based, distortion-free)  
 - Intersite tensors (**Q, T, M**) and their corresponding phase tensors  
-
+- Amplitude tensor from **Z** and vector from **W**
 Selected combinations of these data types can be inverted jointly.
 
 #### Distortion handling
 
 - Optionally estimates a **galvanic distortion matrix** acting on
-  impedance and MTF data. :contentReference[oaicite:11]{index=11}  
+  impedance and MTF data. 
 - Distortion parameters can be configured as real/complex and
   frequency-independent/frequency-dependent within the inversion
-  framework. :contentReference[oaicite:12]{index=12}  
+  framework.
 
 ---
 
@@ -92,11 +80,11 @@ This repository contains a **reduced but functional** version of
 DEVA3DMT, sufficient to:
 
 - Build structured hexahedral meshes with topography, using the
-  hybrid FE–FD forward solver described in Varılsüha (2024). :contentReference[oaicite:13]{index=13}  
+  hybrid FE–FD forward solver described in Varılsüha (2024).
 - Run 3-D MT forward modelling for test models (e.g., double-brick,
   hill, two-mountain).
 - Perform 3-D inversion on a **single mesh shared by all frequencies**,
-  using the L-BFGS-based inversion engine.
+  using the GN-based inversion engine.
 - Use a **single NVIDIA GPU** for forward and pseudo-forward solutions.
 
 The emphasis is on clarity and reproducibility of the core algorithms,
@@ -110,16 +98,16 @@ version does **not** include:
 - **Mesh decoupling / moving footprint inversion**  
   - In the full code, different frequency groups are solved on
     different forward meshes and mapped onto an inversion mesh, giving
-    large speedups. :contentReference[oaicite:14]{index=14}  
+    large speedups. 
   - Here, a *single* forward/inversion mesh is used for all frequencies.
 - **Multi-GPU support**  
   - The research version distributes frequency groups across multiple
-    GPUs; this version targets a **single GPU** for simplicity. :contentReference[oaicite:15]{index=15}  
+    GPUs; this version targets a **single GPU** for simplicity. 
 - **Graphical user interface (GUI)**  
   - The private codebase contains a GUI to build models and inversion
     setups. The GUI is **not** included here; input is configured via
     MATLAB scripts and simple ASCII files.
-- Some internal utilities, experimental features, and convenience
+- Some internal utilities, experimental features (*Triple Grid Design* or *Full Newton Inversion*), and convenience
   scripts that are not essential for reproducing the published results.
 
 If you need these capabilities (e.g., large multi-GPU inversions for
@@ -130,17 +118,11 @@ or access to the full research version.
 
 ## Repository layout
 
-*(Folder names may differ slightly; adjust as needed for your tree.)*
 
-- `src/forward/` – Hybrid FE–FD forward modelling routines (A–φ
-  formulation, assembly, GPU iterative solver).
-- `src/inversion/` – Inversion driver, data misfit/regularization,
-  L-BFGS update, sensitivity computations.
-- `src/util/` – Mesh handling, I/O helpers, plotting utilities, etc.
-- `examples/` – Example models and scripts:
-  - `examples/double_brick/`
-  - `examples/hill/`
-  - `examples/two_mountain/`
+- `DEVA3DMT_start.m` – The starting point of the Matlab code.
+- `DEVA3DMT_main.m` – The main function takes in the the data and performs the inversion. 
+- `digermex` and `solvercuda`– mex functions called directly from Matlab for GPU operations.
+- `solvercuda` - Other Matlab subfunctions that is required for the code.
 - `LICENSE` – Non-commercial research license.
 - `README.md` – This file.
 
@@ -148,12 +130,13 @@ or access to the full research version.
 
 ## Requirements
 
-- **MATLAB** (R20xx or later recommended) with:
-  - Parallel Computing Toolbox (for GPU arrays / `gpuArray`).
+- **MATLAB** (R2024b or later recommended) with:
+  - Parallel Computing Toolbox.
+  - Statistics and Machine Learning Toolbox.
 - **NVIDIA GPU** with CUDA support  
   - Single device is used by this public version.
 - Sufficient GPU memory to hold the global matrix and preconditioner
-  for your mesh.
+  for your mesh. A minimum of 24GB Vram and preferably more.
 
 CPU-only runs may be possible but are not the intended or tested
 configuration and will be significantly slower.
