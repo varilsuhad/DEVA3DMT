@@ -1,0 +1,41 @@
+DEVA3DMT Non-Commercial Research License
+
+Copyright (c) 2020–2025 Deniz Varılsüha
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+copy, and modify the Software for NON-COMMERCIAL research and educational
+purposes only, subject to the following conditions:
+
+1. Any use of the Software must acknowledge the original authors and cite
+   the relevant publications, including:
+
+   - Varılsüha (2020), GEOPHYSICS, 3D inversion of magnetotelluric data by using a hybrid forward-modeling
+approach and mesh decoupling.
+
+2. The Software, or any derivative works based on it, may NOT be used,
+   in whole or in part, for any commercial purpose without prior written
+   permission from the copyright holder. This includes, but is not
+   limited to:
+      - use in proprietary or closed-source software,
+      - use in consulting or service work for which a fee is charged,
+      - use in any product or service that is sold or licensed for a fee.
+
+3. Redistribution of the Software, or of modified versions of it, is
+   permitted only for non-commercial research and educational purposes
+   and must retain:
+      - this license text,
+      - the copyright notice above, and
+      - references to the original authors and publications.
+
+4. This license does not grant any rights to use the name of the authors
+   or their institutions for endorsement of derived works without
+   explicit written permission.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
