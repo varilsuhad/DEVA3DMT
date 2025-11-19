@@ -18,6 +18,11 @@ If you are interested in **production-level 3-D MT inversion with
 all features enabled** (multi-GPU, mesh decoupling, GUI, etc.),
 please contact the author (see below).
 
+# Contact
+
+Questions, bug reports, or requests for access to the full
+multi-GPU / mesh-decoupled version of DEVA3DMT:
+
 **Author** : Deniz Varılsüha
 
 **Email** : deniz.varilsuha@itu.edu.tr
