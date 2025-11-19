@@ -18,7 +18,9 @@ If you are interested in **production-level 3-D MT inversion with
 all features enabled** (multi-GPU, mesh decoupling, GUI, etc.),
 please contact the author (see below).
 
-# Contact
+---
+
+## Contact
 
 Questions, bug reports, or requests for access to the full
 multi-GPU / mesh-decoupled version of DEVA3DMT:
@@ -67,7 +69,7 @@ The inversion can work with several MT data representations:
 - Phase vector **Ψ** (MTF-based, distortion-free)  
 - Intersite tensors (**Q, T, M**) and their corresponding phase tensors  
 - Amplitude tensor from **Z** and vector from **W**
-Selected combinations of these data types can be inverted jointly.
+- Selected combinations of these data types can be inverted jointly.
 
 #### Distortion handling
 
