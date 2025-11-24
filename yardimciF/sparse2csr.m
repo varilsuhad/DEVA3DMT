@@ -10,7 +10,7 @@ function [val, row_ptr, col_ind] = sparse2csr(A, base)
 %
 %   Inputs:
 %   A        - MATLAB sparse matrix.
-%  
+%
 %   base     - Either 0 or 1, for 0- or 1-based indexing of row_ptr and
 %              col_ind.
 %
@@ -43,7 +43,6 @@ ara=cumsum(histc(row, 1:m));ara=ara(:);
 row_ptr = [0; ara] + base;
 
 % row_ptr = [0; cumsum(histc(row, 1:m))] + base;
-
 
 row_ptr=int32(row_ptr);
 col_ind=int32(col_ind);

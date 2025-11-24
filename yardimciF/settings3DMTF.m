@@ -2,23 +2,20 @@
 % Contact: deniz.varilsuha@itu.edu.tr
 function [set] = settings3DMTF(nw,~)
 
-
-% 
+%
 % clear mex          % unload every MEX file
 % gpuDevice([]);     % empty selection resets the current device handle
 % rehash toolboxcache
 
 set.nworkers=0;
 
-
 if(nargin==1)
-
 
 p = gcp('nocreate');
 
 if (isempty(p))
     c=parpool(nw);
-    % c.AdditionalProperties.EnableFullDiagnosticLogs = true;    
+    % c.AdditionalProperties.EnableFullDiagnosticLogs = true;
     else
     if(p.NumWorkers~=nw)
     delete(gcp('nocreate'));
@@ -31,8 +28,6 @@ warning('off','all');
 pctRunOnAll warning('off','all')
 
 end
-
-
 
 %Zxx,Zyx,Zxy,Zyy,DM - Tzx,Tzy,DMT - Sxx,Sxy,Syx,Syy,Szx,Szy -
 %Pxx,Pxy,Pyx,Pyy,Pzx,Pzy - Det
@@ -56,7 +51,6 @@ set.GNlimit=10^-2;
 set.useGPUs=1;
 set.MergeOnCPU=0;
 
-
 set.stagdetect=400;
 set.stackmatrix=1;
 set.relresForward={};
@@ -69,7 +63,7 @@ set.skipMapMesh=0;
 
 set.skipCovariance=0;
 set.ekblokgoster=0;
-set.GaussQuadDeg=3; 
+set.GaussQuadDeg=3;
 set.randDD=0;   %random deltad
 set.changexy=0;  %Z lerin yerini değiştir ÖNEMLİ!
 set.adilpaylastirkat=1.0;
@@ -81,17 +75,15 @@ set.AliciIlkBlokKoy=1;
 set.ortamcizmaxderin=inf;
 set.ortamcizreversecb=0;
 set.skipforwardOrtamkur=0;
-set.sigmaort=0.01;  %%CSEM için 
+set.sigmaort=0.01;  %%CSEM için
 set.primaryEkapa=1;
 set.parametreNaN=0;
 set.montecarlonumber=50000;
 set.initial1Dinterp=0;
 set.equalgrad=1;
 
-
 set.denizblok=0;  %%%% sıfır yaptım 2 idi
 set.denizkarablok=0;
-
 
 %%% Forward calculation
 set.rotatedH=0;
@@ -116,8 +108,8 @@ set.hybridfill=1;
 % set.dataweighting=1;
 set.freqdependent=0;
 set.complexdist=0;
-set.preDiagAdd=0.12; 
-set.incompleteNE='ichol';  % 'ilu'  yada 'ichol'  
+set.preDiagAdd=0.12;
+set.incompleteNE='ichol';  % 'ilu'  yada 'ichol'
 set.lambda=300;
 set.kappa=set.lambda*30;
 set.kappaPlambda=1;
@@ -130,10 +122,9 @@ set.stopndp=10;
 set.stopkappa=15;
 set.stopposrdmd=3;
 set.maxitInv=200;
-set.limitndp=5;   %0.1   
+set.limitndp=5;   %0.1
 set.stoprms=0.001;
 set.stopmisfit=0.001;
-
 
 %%% Başlangıç modeli
 set.havaro=10^8;
@@ -174,7 +165,6 @@ set.errorfloorZxy=0.03;  %%yuzde
 set.errorfloorZyx=0.03;
 set.errorfloorT=0.03;
 
-
 %%% Süre ve yazdırmaca
 set.time=0;   %%%Bireysel polarizasyon-frekans çözümü
 set.relres=0;
@@ -185,7 +175,6 @@ set.sureJp=1;
 set.sureJTdd=1;
 set.sureForward=1; %%%Toplam  çözümü
 set.sureOneIt=1; %%%Toplam  çözümü
-
 
 %%%%%%% Çizdirmece %%%%%%%%%%%%%%%%%
 set.errbar=[-0.05 0.05];
@@ -201,7 +190,6 @@ set.vericizManual=1;
 set.vericizstdkat=2;
 set.fefdsinirciz=1;
 
-
 %%%%%%%%Distortion%%%%%%%%%%%%%%%%%%
 set.distortionAdd=0;
 set.twist=60;
@@ -209,13 +197,11 @@ set.shear=45;
 set.anisotropy=1;
 set.sitegain=0;
 
-
 %%%%%%%%Gürültü%%%%%%%%%%%%%%%%%%
 set.noiseAdd=0;
 set.noiseZ=0.02;
 set.noiseT=0.03;
 set.tipperrand=0;  %Disttortion için
-
 
 %%% Kayıt ve sayaçlar
 set.rdmd=[];
@@ -253,11 +239,7 @@ set.katPA=sqrt(2);
 set.katPB=sqrt(2);
 set.katWD=sqrt(3);
 
-
-
-
 set.minzok=0;
-
 
 end
 

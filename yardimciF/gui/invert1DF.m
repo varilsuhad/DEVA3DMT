@@ -23,15 +23,14 @@ CC=A'*A;
 W=spdiags(1./W,0,size(W,1),size(W,1));
 
 for i=1:set.MT1Dmaxit
- 
-[Z,go,faz] = MT1DF(dz,ro,f);  
+
+[Z,go,faz] = MT1DF(dz,ro,f);
 if (set.MT1DInvEmp==1)
     F=Z;
-else    
+else
     F=[log(go);faz];
 end
 
- 
 dd=d-F;
 mf(i)=real(dd'*W'*W*dd);
 rms(i)=sqrt(mf(i)/length(dd));
@@ -42,8 +41,8 @@ H=J'*W'*W*J+lambda*CC;
 g=J'*W'*W*dd-lambda*CC*log(ro);
 dm=real(H)\real(g);
 
-ro=exp(log(ro)+dm);    
-    
+ro=exp(log(ro)+dm);
+
 fprintf('1D inv iteration=%d misfit=%.2f rms=%.2f\n',i,mf(i),rms(i));
 
 lambda=lambda/2;
@@ -52,25 +51,20 @@ if(lambda<=lim)
 end
 
 if(i>2 && abs(rms(i)-rms(i-1))<set.MT1Drmschangestop)
-    break    
+    break
 end
 
-if(set.MT1Dfigures==1)    
+if(set.MT1Dfigures==1)
     plot(zz/1000,log10(ro));xlabel('z (km)');ylabel('log(ro) (\Omega.m)');
-    title(strcat('iteration=',num2str(i)));    
+    title(strcat('iteration=',num2str(i)));
     pause(0.5);
 end
-
 
 if(mf(i)<=mflim || rms(i)<=rmslim)
     break;
 end
 
 end
-
-
-
-
 
 end
 

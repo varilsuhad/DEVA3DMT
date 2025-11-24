@@ -2,7 +2,6 @@
 % Contact: deniz.varilsuha@itu.edu.tr
 function [NK,ro] = watersurfacesetF(NK,ebhava,z,ro,set)
 
-
 [ny,nx,nz,~]=size(NK);
 
 ny1=ny-1;
@@ -13,11 +12,8 @@ nx1=nx-1;
 ekbloky=(ny1-ny2)/2;
 ekblokx=(nx1-nx2)/2;
 
-
 % al=squeeze(NK(83,1,ebhava+1:end,3));
 % goal=z(83,1);
-
-
 
 % ro2=zeros(ny-1,nx-1,nz-1);
 
@@ -47,95 +43,72 @@ for i=1:nx
     end
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 % [ny,nx]=size(z);
-% 
+%
 % c=0;c2=0;
 % tol=0.00001;
 % if(isfield(set,'denizblok')==0)
 % set.denizblok=0;
 % end
-% 
+%
 % denizblok=set.denizblok;
-% 
+%
 % sakla=[];
 % for i=1:nx
 %     for j=1:ny
-%         al1=NK(j,i,ebhava+1,3); 
+%         al1=NK(j,i,ebhava+1,3);
 %         al2=z(j,i);
 %         if((al1+al2)>tol)
 %             error('Topology addition error\n');
 %         end
-% 
+%
 %         if(al1>tol)
 %             c=c+1;
-%             al=squeeze(NK(j,i,1:ebhava+1,3)); 
+%             al=squeeze(NK(j,i,1:ebhava+1,3));
 %             [geri,db]=suayarF(al,denizblok);  %%bura
 % %             geri2=suayar2F(al,denizblok);  %%bura
 %             NK(j,i,1:ebhava+1,3)=geri;
 %             ind1=1:ebhava+1-db;
 %             al1=squeeze(NK(j,i,ind1,3));
-% 
+%
 %             kat=1.0;
 %             g1=logaritmikkaydirF(al1,kat);
 %             while(abs(g1(end-1))>300)
-%             kat=kat+0.05;    
-%             g1=logaritmikkaydirF(al1,kat);                
+%             kat=kat+0.05;
+%             g1=logaritmikkaydirF(al1,kat);
 %             end
 %             if(kat~=1.0)
-%                c2=c2+1; 
+%                c2=c2+1;
 %             end
-% 
+%
 %             sakla=[sakla;kat];
-% 
+%
 %             NK(j,i,ind1,3)=g1;
-%         end        
-% 
+%         end
+%
 %     end
 % end
 % fprintf('%d sea floor correction\n',c);
 % fprintf('%d sea-air correction\n',c2);
-% 
-% 
+%
+%
 % if(c>0)
-%     kat=mean(sakla);   
+%     kat=mean(sakla);
 %     for i=1:nx
 %         for j=1:ny
-%             al1=NK(j,i,ebhava+1,3); 
+%             al1=NK(j,i,ebhava+1,3);
 %             al2=z(j,i);
 %             if((al1+al2)>tol)
 %                 error('Topo addition error\n');
 %             end
 %             if(al1<=tol)
 %                 al1=squeeze(NK(j,i,1:ebhava+1,3));
-%                 g1=logaritmikkaydirF(al1,kat);        
+%                 g1=logaritmikkaydirF(al1,kat);
 %                 NK(j,i,1:ebhava+1,3)=g1;
-%             end        
+%             end
 %         end
-%     end    
+%     end
 % end
-
-
-
-
-
 
 end
 

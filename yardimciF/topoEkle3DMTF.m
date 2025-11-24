@@ -4,14 +4,11 @@ function [NK,nz1] = topoEkle3DMTF(NK,ebhava,z,nhz,ek)
 
 [nny,nnx,~,~]=size(NK);
 
-
 zo=z;
 
 ii=find(z(:)<0);
 fprintf("%d points are under sea level\n",length(ii));
 z(ii)=0;
-
-
 
 meanz=mean(z(:));
 z=z-meanz;
@@ -41,7 +38,7 @@ nz(ekblokny+nny2+1:end,ekbloknx+i)=nz(ekblokny+nny2,ekbloknx+i);
 end
 
 for i=1:nnx
-    for j=1:nny         
+    for j=1:nny
      NK(j,i,:,3)=topoEkleSubF(nhz,nz(j,i),ebhava,ek);
     end
 end
@@ -53,24 +50,21 @@ nz=nz+meanz;
 [sy1,sx1]=size(nz);
 nz1=zeros(sy1,sx1);
 
-
 [sy,sx]=size(zo);
-
 
 for i=1:sx
     for j=1:sy
 
-
        nz1(j+ekblokny,i+ekbloknx)=zo(j,i);
        if(i==1 && j==1)
        nz1(1:ekblokny+1,1:ekbloknx+1)=zo(j,i);
-       continue;       
+       continue;
        elseif(i==1 && j==sy)
        nz1(end-ekblokny:end,1:ekbloknx+1)=zo(j,i);
-       continue;       
+       continue;
        elseif(i==sx && j==1)
        nz1(1:ekblokny+1,end-ekbloknx:end)=zo(j,i);
-       continue;       
+       continue;
        elseif(i==sx && j==sy)
        nz1(end-ekblokny:end,end-ekbloknx:end)=zo(j,i);
        continue;
@@ -85,17 +79,11 @@ for i=1:sx
        continue;
        elseif(j==sy)
            nz1(end-ekblokny:end,i+ekbloknx)=zo(j,i);
-       continue;       
+       continue;
        end
-
 
     end
 end
-
-
-
-
-
 
 end
 

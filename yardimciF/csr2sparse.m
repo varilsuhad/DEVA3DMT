@@ -32,8 +32,6 @@ end
 row_ptr=double(row_ptr);
 col_ind=double(col_ind);
 
-
-
 if length(val) ~= length(col_ind) || length(col_ind) ~= row_ptr(end)
   error('Vector lengths must agree')
 end

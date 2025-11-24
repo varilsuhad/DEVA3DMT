@@ -6,23 +6,18 @@ format longG
 %%%%% Ayar Y�kle
 [set]=settings3DMTF();
 
-
 d=gpuDevice;
 reset(d)
 d.CachePolicy='minimum';
-
 
 load(inputmatrix);
 set.olcurotasyonxy=aci;
 fprintf("\nRotation angle=%.2f degrees\n",aci);
 
-[base,set] = basekurSF(x,y,z,f,recv,set,data);  
-
-
+[base,set] = basekurSF(x,y,z,f,recv,set,data);
 
 % % 100 ohm.m starting model
 % base.m=ones(length(base.m),1)*(1/100);
-
 
 pause(0.1);
 path=strcat(outputfolder,'\',outputname);
@@ -50,8 +45,6 @@ end
 base.veriname=veriname;
 base.meshname=meshname;
 
-
-
 saveVars3DMTF(base,set,[],[],path,1);
 
 fprintf("\n Starting...\n");
@@ -60,9 +53,8 @@ start=tic;
 [base] = basemergeMexSF(base,set);
 [base,set] = forward3DMTMDSBSF(base,f,set);
 
-[base,F,set] = deltad3DMTMDSF(base,set,1);   
+[base,F,set] = deltad3DMTMDSF(base,set,1);
 fprintf('\nRMS=%e misfit=%e \n',set.RMSall(1),set.MISFIT(1));
-
 
 for uu=1:set.maxitInv
     aa=tic;
@@ -145,7 +137,6 @@ for uu=1:set.maxitInv
     end
     clear w h lst c s e v r0 y
 
-
     set.inneriterGN{uu}=sav;
 
     alfa=1;
@@ -155,9 +146,7 @@ for uu=1:set.maxitInv
     [base,set] = forward3DMTMDSBSF(base,f,set);
     [base,F,set] = deltad3DMTMDSF(base,set,uu+1);
 
-
     fprintf('\nRMS=%e misfit=%e alfa=%f \n',set.RMSall(uu+1),set.MISFIT(uu+1),alfa);
-
 
     [set,base] = StopOrGo3DLF(set,base,dm,alfa,uu,ne);
 
@@ -176,12 +165,9 @@ for uu=1:set.maxitInv
         break
     end
 
-
 end
 
 tottime=toc(start);
-fprintf('\nInversion Completed in %.2f mins\n',tottime/60); 
-
-
+fprintf('\nInversion Completed in %.2f mins\n',tottime/60);
 
 end

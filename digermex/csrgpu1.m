@@ -7,7 +7,6 @@ function [row,col,val,m,n] = csrgpu1(WM)
 m=int32((size(WM,1)));
 n=int32((size(WM,2)));
 
-
 val=gpuArray(val);
 row=gpuArray(row);
 col=gpuArray(col);

@@ -17,13 +17,12 @@ bak2=0;
 if (ok==1)
 
 % e1=gpuArray(veri.e1);
-% e2=gpuArray(veri.e2);    
+% e2=gpuArray(veri.e2);
 
 e1=(veri.e1);
-e2=(veri.e2);  
-    
-%%%%%%%%%%%%%%%%%% FE %%%%%%%%%%%%%%%%%%%%%%%%%
+e2=(veri.e2);
 
+%%%%%%%%%%%%%%%%%% FE %%%%%%%%%%%%%%%%%%%%%%%%%
 
 wm1=base.WM*(base.m.*vec1);
 wm2=base.WM*(base.m.*vec2);
@@ -46,8 +45,6 @@ y6=e2.*(base.BW6*wm2);
 y7=e2.*(base.BW7*wm2);
 y8=e2.*(base.BW8*wm2);
 
-
-
 X1=(sqrt(-1)*base.BM1*f*v1+base.BD1*v1+sqrt(-1)*base.BL1*fd*v1);
 X2=(sqrt(-1)*base.BM2*f*v2+base.BD2*v2+sqrt(-1)*base.BL2*fd*v2);
 X3=(sqrt(-1)*base.BM3*f*v3+base.BD3*v3+sqrt(-1)*base.BL3*fd*v3);
@@ -56,9 +53,6 @@ X5=(base.BD5*v5+sqrt(-1)*base.BL5*fd*v5);
 X6=(base.BD6*v6+sqrt(-1)*base.BL6*fd*v6);
 X7=(base.BD7*v7+sqrt(-1)*base.BL7*fd*v7);
 X8=(base.BD8*v8+sqrt(-1)*base.BL8*fd*v8);
-
-
-
 
 bak11=-X1...
       -X2 ...
@@ -77,7 +71,7 @@ X4=(sqrt(-1)*base.BM4*f*y4+base.BD4*y4+sqrt(-1)*base.BL4*fd*y4);
 X5=(base.BD5*y5+sqrt(-1)*base.BL5*fd*y5);
 X6=(base.BD6*y6+sqrt(-1)*base.BL6*fd*y6);
 X7=(base.BD7*y7+sqrt(-1)*base.BL7*fd*y7);
-X8=(base.BD8*y8+sqrt(-1)*base.BL8*fd*y8);  
+X8=(base.BD8*y8+sqrt(-1)*base.BL8*fd*y8);
 
 bak12=-X1 ...
       -X2 ...
@@ -96,12 +90,12 @@ bak12=-X1 ...
 % X6=(base.BD6+sqrt(-1)*base.BL6*fd);
 % X7=(base.BD7+sqrt(-1)*base.BL7*fd);
 % X8=(base.BD8+sqrt(-1)*base.BL8*fd);
-% 
-% 
+%
+%
 % wm1=base.WM*(base.m.*vec1);
 % wm2=base.WM*(base.m.*vec2);
-% 
-% 
+%
+%
 % bak11=-X1*(e1.*(base.BW1*wm1))...
 %       -X2*(e1.*(base.BW2*wm1)) ...
 %       -X3*(e1.*(base.BW3*wm1)) ...
@@ -110,7 +104,7 @@ bak12=-X1 ...
 %       -X6*(e1.*(base.BW6*wm1)) ...
 %       -X7*(e1.*(base.BW7*wm1)) ...
 %       -X8*(e1.*(base.BW8*wm1));
-% 
+%
 % bak12=-X1*(e2.*(base.BW1*wm2)) ...
 %       -X2*(e2.*(base.BW2*wm2)) ...
 %       -X3*(e2.*(base.BW3*wm2)) ...
@@ -130,7 +124,7 @@ bak12=-X1 ...
 % X6=(base.AD6+sqrt(-1)*base.AL6*fd);
 % X7=(base.AD7+sqrt(-1)*base.AL7*fd);
 % X8=(base.AD8+sqrt(-1)*base.AL8*fd);
-% 
+%
 % bak21=-X1*(e1.*(base.AW1*wm1)) ...
 %       -X2*(e1.*(base.AW2*wm1)) ...
 %       -X3*(e1.*(base.AW3*wm1)) ...
@@ -139,7 +133,7 @@ bak12=-X1 ...
 %       -X6*(e1.*(base.AW6*wm1)) ...
 %       -X7*(e1.*(base.AW7*wm1)) ...
 %       -X8*(e1.*(base.AW8*wm1));
-% 
+%
 % bak22=-X1*(e2*(base.AW1*wm2)) ...
 %       -X2*(e2*(base.AW2*wm2)) ...
 %       -X3*(e2*(base.AW3*wm2)) ...
@@ -193,15 +187,14 @@ bak21=-X1...
 % bak6=X6;
 % bak7=X7;
 % bak8=X8;
-% 
-% 
+%
+%
 % return
 
 % bak1=v1;
 % bak2=0;
 % return;
 
-  
 X1=(sqrt(-1)*base.AM1*f*y1+base.AD1*y1+sqrt(-1)*base.AL1*fd*y1);
 X2=(sqrt(-1)*base.AM2*f*y2+base.AD2*y2+sqrt(-1)*base.AL2*fd*y2);
 X3=(sqrt(-1)*base.AM3*f*y3+base.AD3*y3+sqrt(-1)*base.AL3*fd*y3);
@@ -209,7 +202,7 @@ X4=(sqrt(-1)*base.AM4*f*y4+base.AD4*y4+sqrt(-1)*base.AL4*fd*y4);
 X5=(base.AD5*y5+sqrt(-1)*base.AL5*fd*y5);
 X6=(base.AD6*y6+sqrt(-1)*base.AL6*fd*y6);
 X7=(base.AD7*y7+sqrt(-1)*base.AL7*fd*y7);
-X8=(base.AD8*y8+sqrt(-1)*base.AL8*fd*y8);  
+X8=(base.AD8*y8+sqrt(-1)*base.AL8*fd*y8);
 
 bak22=-X1 ...
       -X2 ...
@@ -221,25 +214,23 @@ bak22=-X1 ...
       -X8;
 
 % bak1=bak22;
-% 
+%
 % return
 
 bak1=bak11+bak21;
-bak2=bak12+bak22;  
-  
+bak2=bak12+bak22;
+
 % bak1=bak21;
 % bak2=bak22;
 
-
-
 elseif(ok==2)
-    
+
 % e1=gpuArray(veri.e1.');
-% e2=gpuArray(veri.e2.');    
+% e2=gpuArray(veri.e2.');
 
 e1=(veri.e1.');
-e2=(veri.e2.');   
-    
+e2=(veri.e2.');
+
 %%%%%%%%%%%%%%%%%% FE %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % X1=transpose(sqrt(-1)*base.BM1*f+base.BD1+sqrt(-1)*base.BL1*fd);
@@ -250,7 +241,7 @@ e2=(veri.e2.');
 % X6=transpose(base.BD6+sqrt(-1)*base.BL6*fd);
 % X7=transpose(base.BD7+sqrt(-1)*base.BL7*fd);
 % X8=transpose(base.BD8+sqrt(-1)*base.BL8*fd);
-% 
+%
 % bak11=-(transpose(base.BW1)*(e1.*(X1*vec1)))...
 %       -(transpose(base.BW2)*(e1.*(X2*vec1)))...
 %       -(transpose(base.BW3)*(e1.*(X3*vec1)))...
@@ -259,9 +250,9 @@ e2=(veri.e2.');
 %       -(transpose(base.BW6)*(e1.*(X6*vec1)))...
 %       -(transpose(base.BW7)*(e1.*(X7*vec1)))...
 %       -(transpose(base.BW8)*(e1.*(X8*vec1)));
-% bak11=base.m.*(transpose(base.WM)*bak11);  
-%   
-%   
+% bak11=base.m.*(transpose(base.WM)*bak11);
+%
+%
 % bak12=-(transpose(base.BW1)*(e2.*(X1*vec2)))...
 %       -(transpose(base.BW2)*(e2.*(X2*vec2)))...
 %       -(transpose(base.BW3)*(e2.*(X3*vec2)))...
@@ -269,8 +260,8 @@ e2=(veri.e2.');
 %       -(transpose(base.BW5)*(e2.*(X5*vec2)))...
 %       -(transpose(base.BW6)*(e2.*(X6*vec2)))...
 %       -(transpose(base.BW7)*(e2.*(X7*vec2)))...
-%       -(transpose(base.BW8)*(e2.*(X8*vec2)));  
-% bak12=base.m.*(transpose(base.WM)*bak12);  
+%       -(transpose(base.BW8)*(e2.*(X8*vec2)));
+% bak12=base.m.*(transpose(base.WM)*bak12);
 
 X1=(vec1.'*sqrt(-1)*base.BM1*f+vec1.'*base.BD1+vec1.'*sqrt(-1)*base.BL1*fd);
 X2=(vec1.'*sqrt(-1)*base.BM2*f+vec1.'*base.BD2+vec1.'*sqrt(-1)*base.BL2*fd);
@@ -290,9 +281,7 @@ bak11=-(X1.*e1)*(base.BW1)...
       -(X7.*e1)*(base.BW7)...
       -(X8.*e1)*(base.BW8);
 
-bak11=base.m.*(bak11*(base.WM)).'; 
-
-
+bak11=base.m.*(bak11*(base.WM)).';
 
 X1=(vec2.'*sqrt(-1)*base.BM1*f+vec2.'*base.BD1+vec2.'*sqrt(-1)*base.BL1*fd);
 X2=(vec2.'*sqrt(-1)*base.BM2*f+vec2.'*base.BD2+vec2.'*sqrt(-1)*base.BL2*fd);
@@ -303,7 +292,6 @@ X6=(vec2.'*base.BD6+vec2.'*sqrt(-1)*base.BL6*fd);
 X7=(vec2.'*base.BD7+vec2.'*sqrt(-1)*base.BL7*fd);
 X8=(vec2.'*base.BD8+vec2.'*sqrt(-1)*base.BL8*fd);
 
-
 bak12=-(X1.*e2)*(base.BW1)...
       -(X2.*e2)*(base.BW2)...
       -(X3.*e2)*(base.BW3)...
@@ -312,11 +300,7 @@ bak12=-(X1.*e2)*(base.BW1)...
       -(X6.*e2)*(base.BW6)...
       -(X7.*e2)*(base.BW7)...
       -(X8.*e2)*(base.BW8);
-bak12=base.m.*(bak12*(base.WM)).';  
-
-  
-
-
+bak12=base.m.*(bak12*(base.WM)).';
 
 %%%%%%%%%%%%%%%%%% FD %%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -328,8 +312,8 @@ bak12=base.m.*(bak12*(base.WM)).';
 % X6=transpose(base.AD6+sqrt(-1)*base.AL6*fd);
 % X7=transpose(base.AD7+sqrt(-1)*base.AL7*fd);
 % X8=transpose(base.AD8+sqrt(-1)*base.AL8*fd);
-% 
-% 
+%
+%
 % bak21=-(transpose(base.AW1)*(e1.*(X1*vec1)))...
 %       -(transpose(base.AW2)*(e1.*(X2*vec1)))...
 %       -(transpose(base.AW3)*(e1.*(X3*vec1)))...
@@ -338,9 +322,9 @@ bak12=base.m.*(bak12*(base.WM)).';
 %       -(transpose(base.AW6)*(e1.*(X6*vec1)))...
 %       -(transpose(base.AW7)*(e1.*(X7*vec1)))...
 %       -(transpose(base.AW8)*(e1.*(X8*vec1)));
-% bak21=base.m.*(transpose(base.WM)*bak21);  
-%   
-%   
+% bak21=base.m.*(transpose(base.WM)*bak21);
+%
+%
 % bak22=-(transpose(base.AW1)*(e2.*(X1*vec2)))...
 %       -(transpose(base.AW2)*(e2.*(X2*vec2)))...
 %       -(transpose(base.AW3)*(e2.*(X3*vec2)))...
@@ -349,10 +333,7 @@ bak12=base.m.*(bak12*(base.WM)).';
 %       -(transpose(base.AW6)*(e2.*(X6*vec2)))...
 %       -(transpose(base.AW7)*(e2.*(X7*vec2)))...
 %       -(transpose(base.AW8)*(e2.*(X8*vec2)));
-% bak22=base.m.*(transpose(base.WM)*bak22);  
-
-
-
+% bak22=base.m.*(transpose(base.WM)*bak22);
 
 X1=(vec1.'*sqrt(-1)*base.AM1*f+vec1.'*base.AD1+vec1.'*sqrt(-1)*base.AL1*fd);
 X2=(vec1.'*sqrt(-1)*base.AM2*f+vec1.'*base.AD2+vec1.'*sqrt(-1)*base.AL2*fd);
@@ -363,7 +344,6 @@ X6=(vec1.'*base.AD6+vec1.'*sqrt(-1)*base.AL6*fd);
 X7=(vec1.'*base.AD7+vec1.'*sqrt(-1)*base.AL7*fd);
 X8=(vec1.'*base.AD8+vec1.'*sqrt(-1)*base.AL8*fd);
 
-
 bak21=-(X1.*e1)*(base.AW1)...
       -(X2.*e1)*(base.AW2)...
       -(X3.*e1)*(base.AW3)...
@@ -372,8 +352,7 @@ bak21=-(X1.*e1)*(base.AW1)...
       -(X6.*e1)*(base.AW6)...
       -(X7.*e1)*(base.AW7)...
       -(X8.*e1)*(base.AW8);
-bak21=base.m.*(bak21*(base.WM)).'; 
-
+bak21=base.m.*(bak21*(base.WM)).';
 
 X1=(vec2.'*sqrt(-1)*base.AM1*f+vec2.'*base.AD1+vec2.'*sqrt(-1)*base.AL1*fd);
 X2=(vec2.'*sqrt(-1)*base.AM2*f+vec2.'*base.AD2+vec2.'*sqrt(-1)*base.AL2*fd);
@@ -384,7 +363,6 @@ X6=(vec2.'*base.AD6+vec2.'*sqrt(-1)*base.AL6*fd);
 X7=(vec2.'*base.AD7+vec2.'*sqrt(-1)*base.AL7*fd);
 X8=(vec2.'*base.AD8+vec2.'*sqrt(-1)*base.AL8*fd);
 
-
 bak22=-(X1.*e2)*(base.AW1)...
       -(X2.*e2)*(base.AW2)...
       -(X3.*e2)*(base.AW3)...
@@ -393,18 +371,17 @@ bak22=-(X1.*e2)*(base.AW1)...
       -(X6.*e2)*(base.AW6)...
       -(X7.*e2)*(base.AW7)...
       -(X8.*e2)*(base.AW8);
-bak22=base.m.*(bak22*(base.WM)).'; 
+bak22=base.m.*(bak22*(base.WM)).';
 
 % bak1=bak22;
 % return
 
-
 bak1=bak11+bak21;
-bak2=bak12+bak22;  
+bak2=bak12+bak22;
 
 elseif(ok==3)
 e1=(veri.e1);
-e2=(veri.e2);  
+e2=(veri.e2);
 
 e1=spdiags(e1,0,length(e1),length(e1));
 e2=spdiags(e2,0,length(e2),length(e2));
@@ -467,25 +444,19 @@ bak22=-X1*(e2*(base.AW1*(base.WM*(base.md)))) ...
       -X8*(e2*(base.AW8*(base.WM*(base.md))));
 
 bak1=bak11+bak21;
-bak2=bak12+bak22;    
-    
-    
-    
+bak2=bak12+bak22;
+
 else
-error('P*vec hata var\n');   
-    
+error('P*vec hata var\n');
 
 end
 
-
-
-
-% 
-% 
+%
+%
 % if (ok==1)
-% 
+%
 % %%%%%%%%%%%%%%%%%% FE %%%%%%%%%%%%%%%%%%%%%%%%%
-% 
+%
 % X1=(sqrt(-1)*base.BM1*f+base.BD1+sqrt(-1)*base.BL1/f);
 % X2=(sqrt(-1)*base.BM2*f+base.BD2+sqrt(-1)*base.BL2/f);
 % X3=(sqrt(-1)*base.BM3*f+base.BD3+sqrt(-1)*base.BL3/f);
@@ -494,7 +465,7 @@ end
 % X6=(base.BD6+sqrt(-1)*base.BL6/f);
 % X7=(base.BD7+sqrt(-1)*base.BL7/f);
 % X8=(base.BD8+sqrt(-1)*base.BL8/f);
-% 
+%
 % bak11=-X1*(e1*(base.wb1*vec1))...
 %       -X2*(e1*(base.wb2*vec1)) ...
 %       -X3*(e1*(base.wb3*vec1)) ...
@@ -503,7 +474,7 @@ end
 %       -X6*(e1*(base.wb6*vec1)) ...
 %       -X7*(e1*(base.wb7*vec1)) ...
 %       -X8*(e1*(base.wb8*vec1));
-% 
+%
 % bak12=-X1*(e2*(base.wb1*vec2)) ...
 %       -X2*(e2*(base.wb2*vec2)) ...
 %       -X3*(e2*(base.wb3*vec2)) ...
@@ -512,9 +483,9 @@ end
 %       -X6*(e2*(base.wb6*vec2)) ...
 %       -X7*(e2*(base.wb7*vec2)) ...
 %       -X8*(e2*(base.wb8*vec2));
-% 
+%
 % %%%%%%%%%%%%%%%%%% FD %%%%%%%%%%%%%%%%%%%%%%%%%
-% 
+%
 % X1=(sqrt(-1)*base.AM1*f+base.AD1+sqrt(-1)*base.AL1/f);
 % X2=(sqrt(-1)*base.AM2*f+base.AD2+sqrt(-1)*base.AL2/f);
 % X3=(sqrt(-1)*base.AM3*f+base.AD3+sqrt(-1)*base.AL3/f);
@@ -523,7 +494,7 @@ end
 % X6=(base.AD6+sqrt(-1)*base.AL6/f);
 % X7=(base.AD7+sqrt(-1)*base.AL7/f);
 % X8=(base.AD8+sqrt(-1)*base.AL8/f);
-% 
+%
 % bak21=-X1*(e1*(base.wa1*vec1))...
 %       -X2*(e1*(base.wa2*vec1)) ...
 %       -X3*(e1*(base.wa3*vec1)) ...
@@ -532,7 +503,7 @@ end
 %       -X6*(e1*(base.wa6*vec1)) ...
 %       -X7*(e1*(base.wa7*vec1)) ...
 %       -X8*(e1*(base.wa8*vec1));
-% 
+%
 % bak22=-X1*(e2*(base.wa1*vec2)) ...
 %       -X2*(e2*(base.wa2*vec2)) ...
 %       -X3*(e2*(base.wa3*vec2)) ...
@@ -541,13 +512,13 @@ end
 %       -X6*(e2*(base.wa6*vec2)) ...
 %       -X7*(e2*(base.wa7*vec2)) ...
 %       -X8*(e2*(base.wa8*vec2));
-% 
+%
 % bak1=bak11+bak21;
 % bak2=bak12+bak22;
 % elseif(ok==2)
-%     
+%
 % %%%%%%%%%%%%%%%%%% FE %%%%%%%%%%%%%%%%%%%%%%%%%
-% 
+%
 % X1=transpose(sqrt(-1)*base.BM1*f+base.BD1+sqrt(-1)*base.BL1/f);
 % X2=transpose(sqrt(-1)*base.BM2*f+base.BD2+sqrt(-1)*base.BL2/f);
 % X3=transpose(sqrt(-1)*base.BM3*f+base.BD3+sqrt(-1)*base.BL3/f);
@@ -556,7 +527,7 @@ end
 % X6=transpose(base.BD6+sqrt(-1)*base.BL6/f);
 % X7=transpose(base.BD7+sqrt(-1)*base.BL7/f);
 % X8=transpose(base.BD8+sqrt(-1)*base.BL8/f);
-% 
+%
 % bak11=-transpose(base.wb1)*(e1*(X1*vec1))...
 %       -transpose(base.wb2)*(e1*(X2*vec1))...
 %       -transpose(base.wb3)*(e1*(X3*vec1))...
@@ -565,7 +536,7 @@ end
 %       -transpose(base.wb6)*(e1*(X6*vec1))...
 %       -transpose(base.wb7)*(e1*(X7*vec1))...
 %       -transpose(base.wb8)*(e1*(X8*vec1));
-% 
+%
 % bak12=-transpose(base.wb1)*(e2*(X1*vec2))...
 %       -transpose(base.wb2)*(e2*(X2*vec2))...
 %       -transpose(base.wb3)*(e2*(X3*vec2))...
@@ -574,9 +545,9 @@ end
 %       -transpose(base.wb6)*(e2*(X6*vec2))...
 %       -transpose(base.wb7)*(e2*(X7*vec2))...
 %       -transpose(base.wb8)*(e2*(X8*vec2));
-% 
+%
 % %%%%%%%%%%%%%%%%%% FD %%%%%%%%%%%%%%%%%%%%%%%%%
-% 
+%
 % X1=transpose(sqrt(-1)*base.AM1*f+base.AD1+sqrt(-1)*base.AL1/f);
 % X2=transpose(sqrt(-1)*base.AM2*f+base.AD2+sqrt(-1)*base.AL2/f);
 % X3=transpose(sqrt(-1)*base.AM3*f+base.AD3+sqrt(-1)*base.AL3/f);
@@ -585,7 +556,7 @@ end
 % X6=transpose(base.AD6+sqrt(-1)*base.AL6/f);
 % X7=transpose(base.AD7+sqrt(-1)*base.AL7/f);
 % X8=transpose(base.AD8+sqrt(-1)*base.AL8/f);
-% 
+%
 % % wa1=transpose(base.wa1);
 % % wa2=transpose(base.wa2);
 % % wa3=transpose(base.wa3);
@@ -594,7 +565,7 @@ end
 % % wa6=transpose(base.wa6);
 % % wa7=transpose(base.wa7);
 % % wa8=transpose(base.wa8);
-% 
+%
 % bak21=-transpose(base.wa1)*(e1*(X1*vec1))...
 %       -transpose(base.wa2)*(e1*(X2*vec1))...
 %       -transpose(base.wa3)*(e1*(X3*vec1))...
@@ -603,7 +574,7 @@ end
 %       -transpose(base.wa6)*(e1*(X6*vec1))...
 %       -transpose(base.wa7)*(e1*(X7*vec1))...
 %       -transpose(base.wa8)*(e1*(X8*vec1));
-% 
+%
 % bak22=-transpose(base.wa1)*(e2*(X1*vec2))...
 %       -transpose(base.wa2)*(e2*(X2*vec2))...
 %       -transpose(base.wa3)*(e2*(X3*vec2))...
@@ -612,7 +583,7 @@ end
 %       -transpose(base.wa6)*(e2*(X6*vec2))...
 %       -transpose(base.wa7)*(e2*(X7*vec2))...
 %       -transpose(base.wa8)*(e2*(X8*vec2));
-%   
+%
 % % bak21=-wa1*(e1*(X1*vec1))...
 % %       -wa2*(e1*(X2*vec1))...
 % %       -wa3*(e1*(X3*vec1))...
@@ -621,7 +592,7 @@ end
 % %       -wa6*(e1*(X6*vec1))...
 % %       -wa7*(e1*(X7*vec1))...
 % %       -wa8*(e1*(X8*vec1));
-% % 
+% %
 % % bak22=-wa1*(e2*(X1*vec2))...
 % %       -wa2*(e2*(X2*vec2))...
 % %       -wa3*(e2*(X3*vec2))...
@@ -629,16 +600,16 @@ end
 % %       -wa5*(e2*(X5*vec2))...
 % %       -wa6*(e2*(X6*vec2))...
 % %       -wa7*(e2*(X7*vec2))...
-% %       -wa8*(e2*(X8*vec2));  
-%   
-% 
+% %       -wa8*(e2*(X8*vec2));
+%
+%
 % bak1=bak11+bak21;
-% bak2=bak12+bak22;    
-%     
+% bak2=bak12+bak22;
+%
 % else
-% error('P*vec hata var\n');   
-%     
-% 
+% error('P*vec hata var\n');
+%
+%
 % end
 
 end

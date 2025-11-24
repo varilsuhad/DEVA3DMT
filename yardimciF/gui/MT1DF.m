@@ -11,10 +11,10 @@ mu=4*pi*10^-7;
 w=2*pi*f(k);
 
 for i=N:-1:1
-    
+
     sig=1/ro(i);
     kn=sqrt(sqrt(-1)*w*mu*sig);
-    
+
     if(i==N)
         CN=1/kn;
     else
@@ -22,8 +22,8 @@ for i=N:-1:1
         ust=CN*kn+tanh(kn*z);
         alt=CN*kn*tanh(kn*z)+1;
         CN=1/kn*ust/alt;
-    end    
-    
+    end
+
 end
 
 Z(k,1)=sqrt(-1)*w*mu*CN;

@@ -9,11 +9,10 @@ function [P,sigP] = variancePAF(Z,e)
         sigP=P;
         return
     end
-        
+
     X=real(Z);
     Y=imag(Z);
     PHI=inv(X)*Y;
-
 
     X1=X(1,1);
     X2=X(1,2);
@@ -23,7 +22,7 @@ function [P,sigP] = variancePAF(Z,e)
     Y1=Y(1,1);
     Y2=Y(1,2);
     Y3=Y(2,1);
-    Y4=Y(2,2);    
+    Y4=Y(2,2);
 
     det=X1*X4-X2*X3;
     a1=(X4*Y1-X2*Y3)/det;
@@ -88,8 +87,6 @@ P(1,1)=(X1*(p1+s)+X2*p3)/alt;
 P(1,2)=(X1*p3+X2*(p2+s))/alt;
 P(2,1)=(X3*(p1+s)+X4*p3)/alt;
 P(2,2)=(X3*p3+X4*(p2+s))/alt;
-
-
 
 %P1 - X1
 p1t=2*a1*a1tx1+2*a2*a2tx1;
@@ -172,7 +169,6 @@ stur=0.5*inv(s)*(p1t*p2+p1*p2t-2*p3*p3t);
 altt=0.5*inv(alt)*(p1t+p2t+2*stur);
 ustt=X1*(p1t+stur)+X2*p3t;
 P1TY4=(alt*ustt-altt*ust)/alt^2;
-
 
 %P2 - X1
 p1t=2*a1*a1tx1+2*a2*a2tx1;
@@ -298,7 +294,6 @@ altt=0.5*inv(alt)*(p1t+p2t+2*stur);
 ustt=(X3*(p1t+stur)+X4*p3t+p3);
 P3TX4=(alt*ustt-altt*ust)/alt^2;
 
-
 %P3 - Y1
 p1t=2*a1*a1ty1+2*a2*a2ty1;
 p2t=2*a3*a3ty1+2*a4*a4ty1;
@@ -338,7 +333,6 @@ stur=0.5*inv(s)*(p1t*p2+p1*p2t-2*p3*p3t);
 altt=0.5*inv(alt)*(p1t+p2t+2*stur);
 ustt=(X3*(p1t+stur)+X4*p3t);
 P3TY4=(alt*ustt-altt*ust)/alt^2;
-
 
 %P4 - X1
 p1t=2*a1*a1tx1+2*a2*a2tx1;
@@ -424,13 +418,11 @@ P4TY4=(alt*ustt-altt*ust)/alt^2;
 
 sigP=zeros(2,2);
 
-
 sigP(1,1)=sqrt(P1TX1^2*e(1,1)^2+P1TY1^2*e(1,1)^2+P1TX2^2*e(1,2)^2+P1TY2^2*e(1,2)^2 ...
                 +P1TX3^2*e(2,1)^2+P1TY3^2*e(2,1)^2+P1TX4^2*e(2,1)^2+P1TY4^2*e(2,1)^2);
 
 sigP(1,2)=sqrt(P2TX1^2*e(1,1)^2+P2TY1^2*e(1,1)^2+P2TX2^2*e(1,2)^2+P2TY2^2*e(1,2)^2 ...
                 +P2TX3^2*e(2,1)^2+P2TY3^2*e(2,1)^2+P2TX4^2*e(2,2)^2+P2TY4^2*e(2,2)^2);
-
 
 sigP(2,1)=sqrt(P3TX1^2*e(1,1)^2+P3TY1^2*e(1,1)^2+P3TX2^2*e(1,2)^2+P3TY2^2*e(1,2)^2 ...
                 +P3TX3^2*e(2,1)^2+P3TY3^2*e(2,1)^2+P3TX4^2*e(2,2)^2+P3TY4^2*e(2,2)^2);
@@ -438,6 +430,5 @@ sigP(2,1)=sqrt(P3TX1^2*e(1,1)^2+P3TY1^2*e(1,1)^2+P3TX2^2*e(1,2)^2+P3TY2^2*e(1,2)
 sigP(2,2)=sqrt(P4TX1^2*e(1,1)^2+P4TY1^2*e(1,1)^2+P4TX2^2*e(1,2)^2+P4TY2^2*e(1,2)^2 ...
                 +P4TX3^2*e(2,1)^2+P4TY3^2*e(2,1)^2+P4TX4^2*e(2,2)^2+P4TY4^2*e(2,2)^2);
 
-            
 end
 

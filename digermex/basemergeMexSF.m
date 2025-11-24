@@ -2,7 +2,6 @@
 % Contact: deniz.varilsuha@itu.edu.tr
 function [base] = basemergeMexSF(base,set)
 
-
 base.T1r=[];base.T1c=[];base.T1v=[];
 base.T2r=[];base.T2c=[];base.T2v=[];
 base.T3r=[];base.T3c=[];base.T3v=[];
@@ -24,7 +23,5 @@ base.BL5r,base.BL5c,base.BL5v,base.BL6r,base.BL6c,base.BL6v,base.BL7r,base.BL7c,
 base.W1r,base.W1c,base.W1v,base.W2r,base.W2c,base.W2v,base.W3r,base.W3c,base.W3v,base.W4r,base.W4c,base.W4v,...
 base.W5r,base.W5c,base.W5v,base.W6r,base.W6c,base.W6v,base.W7r,base.W7c,base.W7v,base.W8r,base.W8c,base.W8v,...
 base.AK0r,base.AK0c,base.AK0v,base.BK0r,base.BK0c,base.BK0v);
-
-
 
 end

@@ -2,10 +2,8 @@
 % Contact: deniz.varilsuha@itu.edu.tr
 function [ro2,dz2,ekblokz2] = moreParameterF(ro,ebhava,ekblokz,dz,nhz)
 
-
 dz=dz(:);
 nhz=nhz(:);
-
 
 kalan=2;
 
@@ -14,7 +12,6 @@ if(ekblokz-kalan<0)
 end
 
 fark=ekblokz-kalan;
-
 
 dz2=[dz;nhz(ebhava+length(dz)+1:end-kalan)];
 
@@ -29,6 +26,5 @@ ro2(:,:,nz+i)=ro(:,:,end);
 end
 
 ekblokz2=kalan;
-
 
 end
