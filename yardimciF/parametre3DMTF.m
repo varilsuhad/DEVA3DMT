@@ -1,3 +1,5 @@
+% © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
+% Contact: deniz.varilsuha@itu.edu.tr
 function [EL,nro,m,ro,Re] = parametre3DMTF(EL,NK,ro,ekblokx,ekbloky,ekblokz,ebhava)
 
 [ny,nx,nz]=size(ro);

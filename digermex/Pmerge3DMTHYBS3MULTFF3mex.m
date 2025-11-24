@@ -1,3 +1,5 @@
+% © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
+% Contact: deniz.varilsuha@itu.edu.tr
 function [bak1,bak2] = Pmerge3DMTHYBS3MULTFF3mex(PC,veri,ok,vec1,vec2,set)
 
 e1=gpuArray(veri.e1);

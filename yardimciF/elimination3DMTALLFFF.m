@@ -1,3 +1,5 @@
+% © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
+% Contact: deniz.varilsuha@itu.edu.tr
 function [WE,totD,totC,base] = elimination3DMTALLFFF(data,data2,set,base)
 
 

@@ -1,3 +1,5 @@
+% © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
+% Contact: deniz.varilsuha@itu.edu.tr
 function [NK,ro] = watersurfacesetF(NK,ebhava,z,ro,set)
 
 

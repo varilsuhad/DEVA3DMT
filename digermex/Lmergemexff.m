@@ -1,3 +1,5 @@
+% © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
+% Contact: deniz.varilsuha@itu.edu.tr
 function [bak1,bak2,bak3] = Lmergemexff(pas,veri,ii,okT,dd1,dd2,dd3,set)
 
 Z0=gpuArray(veri.Z0);

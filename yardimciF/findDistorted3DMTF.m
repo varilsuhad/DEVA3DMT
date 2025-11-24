@@ -1,3 +1,5 @@
+% © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
+% Contact: deniz.varilsuha@itu.edu.tr
 function [FE,FD] = findDistorted3DMTF(NK,set)
 
 [nny1,nnx1,nnz1,~]=size(NK);
