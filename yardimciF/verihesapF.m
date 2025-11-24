@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Derive MT transfer functions, apparent resistivity, and phase from field solutions at receivers.
 function [veri] = verihesapF(base,x,f,nof,res,set)
 mu=4*pi*10^-7;
 

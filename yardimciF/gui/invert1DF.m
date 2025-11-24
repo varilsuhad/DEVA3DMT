@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Perform a simple 1-D inversion of apparent resistivity/phase curves.
 function [ro,mf,F] = invert1DF(d,W,dz,f,set)
 
 if(set.MT1Dfigures==1)

@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Compute phase tensor variances for amplitude-normalized impedance inputs.
 function [P,sigP] = variancePAF(Z,e)
 
     al=sum(isnan(Z(:)));

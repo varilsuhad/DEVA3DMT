@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Same as JTdd3DMTHYBMDTriGSF but reuses cached factorization when available for speed.
 function [grad,set,PC] = JTdd3DMTHYBMDTriGSFF(PC,set)
 
 aa=tic;

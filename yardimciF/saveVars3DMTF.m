@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Persist intermediate inversion outputs (fields, residuals, models) to disk for later inspection.
 function [] = saveVars3DMTF(base,set,F,ii,path0,ok,r0,s1,y1,ro1)
 
 if (ok==1)

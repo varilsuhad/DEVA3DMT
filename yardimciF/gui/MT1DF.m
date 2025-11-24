@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Calculate 1-D MT responses for layered resistivity profiles.
 function [Z,roro,faz] = MT1DF(dz,ro,f)
 
 nf=length(f);

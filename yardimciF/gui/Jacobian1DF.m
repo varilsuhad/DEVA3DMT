@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Assemble 1-D sensitivity kernels for layered models used by the GUI utilities.
 function [J] = Jacobian1DF(ro,dz,f,set)
 
 [Z,go1,faz1] = MT1DF(dz,ro,f);

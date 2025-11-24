@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Reconstruct physical 2-D coordinates from local reference coordinates in a quadrilateral element.
 function [x1,z1] = KoorGet2DX(x,z,a,c)
 
 ka=[-1 +1 +1 -1];

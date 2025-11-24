@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Build the core mesh, receiver, and frequency structures needed for forward and inverse runs.
 function [base,set] = basekurSF(x,y,z,f,recv,set,data,data2)
 
 if(exist('data')==1 && exist('data2')==0)

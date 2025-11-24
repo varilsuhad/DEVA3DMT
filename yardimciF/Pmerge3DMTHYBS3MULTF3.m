@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Merge polarization-specific forward solutions into combined prediction vectors for selected data types.
 function [ bak1,bak2 ] = Pmerge3DMTHYBS3MULTF3(base,veri,ok,vec1,vec2)
 
 % [ bak1,bak2 ]

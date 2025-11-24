@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Compute strike-rotation invariant SSQ averages of impedance tensors.
 function [Zssq,Vssq] = SSqAverageF(data)
 
 [nf,ni,~]=size(data);

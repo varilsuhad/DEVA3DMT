@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Accumulate Gauss–Newton gradient contributions for the hybrid MT inverse problem across frequencies.
 function [grad,set,PC] = JTdd3DMTHYBMDTriGSF(PC,set)
 
 aa=tic;

@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Apply Gauss–Newton updates to conductivity and optional distortion parameters.
 function [base] = updatemHYBPTriSF(base,set,dm)
 
 ara=log(base.m)+dm(1:base.totP);

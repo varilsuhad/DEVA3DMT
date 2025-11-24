@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Form the inverse Jacobian and determinant for trilinear hexahedral mapping at a given local point.
 function [JJ,dd] = Jabc3DMTF( x,y,z,a,b,c,JJ)
 
 q1=-(1-b)*(1-c);

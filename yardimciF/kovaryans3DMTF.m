@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Build covariance weights for model parameters based on spatial cell sizes and padding.
 function [C] = kovaryans3DMTF(NK,param,ekblokx,ekbloky,ekblokz,ebhava)
 
 [nny,nnx,nnz,~]=size(NK);

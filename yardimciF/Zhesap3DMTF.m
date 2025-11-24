@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Compute impedance, tipper, and related MT transfer functions from field components.
 function [veri]=Zhesap3DMTF(Ex1,Ex2,Ey1,Ey2,Hx1,Hx2,Hy1,Hy2,Ez1,Ez2,Hz1,Hz2,base,ii)
 
 if(nargin==14)
