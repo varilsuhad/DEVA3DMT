@@ -61,7 +61,7 @@ set.relresForward={};
 set.equalgrad=1;
 set.extrapadding=0;
 
-%%%%Çeşitli debug vs
+%%%%Ã‡eÃ¾itli debug vs
 set.skipDiscretization=0;
 set.skipMapMesh=0;
 
@@ -69,17 +69,17 @@ set.skipCovariance=0;
 set.ekblokgoster=0;
 set.GaussQuadDeg=3; 
 set.randDD=0;   %random deltad
-set.changexy=0;  %Z lerin yerini değiştir ÖNEMLİ!
+set.changexy=0;  %Z lerin yerini deÃ°iÃ¾tir Ã–NEMLÃ!
 set.adilpaylastirkat=1.0;
 set.saveEH=0;
 set.gatherveri=0;
-set.forwardElek=1;    % Düz çözümde eleme yap-1  yapma-0
+set.forwardElek=1;    % DÃ¼z Ã§Ã¶zÃ¼mde eleme yap-1  yapma-0
 set.eliminatedata=0;
 set.AliciIlkBlokKoy=1;
 set.ortamcizmaxderin=inf;
 set.ortamcizreversecb=0;
 set.skipforwardOrtamkur=0;
-set.sigmaort=0.01;  %%CSEM için 
+set.sigmaort=0.01;  %%CSEM iÃ§in 
 set.primaryEkapa=1;
 set.parametreNaN=0;
 set.montecarlonumber=50000;
@@ -87,22 +87,22 @@ set.initial1Dinterp=0;
 set.equalgrad=1;
 
 
-set.denizblok=0;  %%%% sıfır yaptım 2 idi
+set.denizblok=0;  %%%% sÃ½fÃ½r yaptÃ½m 2 idi
 set.denizkarablok=0;
 
 
 %%% Forward calculation
 set.rotatedH=0;
-set.AliciOrtada=1;  %% ikiside 0 ise alıcı nerdeyse
+set.AliciOrtada=1;  %% ikiside 0 ise alÃ½cÃ½ nerdeyse
 set.AliciYuzeyde=0;
 set.maxit=200;
 set.limForward=10^-9;
 set.limDiger=10^-9;
 set.limDigerGN=10^-8;
 set.gpu=1;
-set.duzolcum=1;    %% Rotasyon yok elektrik alanda düşey olarak
-set.olcurotasyonxy=0;  %% Elektrik ve manyetik alanı x-y düzleminde rotasyona uğrat
-%%%Kapadım ki yanlışlıkla sıfır olmasın
+set.duzolcum=1;    %% Rotasyon yok elektrik alanda dÃ¼Ã¾ey olarak
+set.olcurotasyonxy=0;  %% Elektrik ve manyetik alanÃ½ x-y dÃ¼zleminde rotasyona uÃ°rat
+%%%KapadÃ½m ki yanlÃ½Ã¾lÃ½kla sÃ½fÃ½r olmasÃ½n
 
 %%% Hybrid
 set.hybridpadblok=2;
@@ -110,7 +110,7 @@ set.cizdirFEFD=1;
 set.allFE=0;
 set.hybridfill=1;
 
-%%% Ters çözüm
+%%% Ters Ã§Ã¶zÃ¼m
 % set.dataweighting=1;
 set.freqdependent=0;
 set.complexdist=0;
@@ -120,7 +120,7 @@ set.lambda=300;
 set.kappa=set.lambda*30;
 set.kappaPlambda=1;
 
-%%% Durdurma ve İlerleme
+%%% Durdurma ve Ãlerleme
 set.limitkappa=-2;
 set.kappabol=2;
 set.lambdabol=2;
@@ -133,22 +133,22 @@ set.stoprms=0.001;
 set.stopmisfit=0.001;
 
 
-%%% Başlangıç modeli
+%%% BaÃ¾langÃ½Ã§ modeli
 set.havaro=10^8;
 set.waterro=0.33;
-set.sdro=100; %En küçük blok için
+set.sdro=100; %En kÃ¼Ã§Ã¼k blok iÃ§in
 set.iro=100;  %Matrisi bunla doldur
-set.bro=100;  %Sınır hesabı için
-set.dzks=1.1; %dz arttırma oranı
-set.bounAirC=2;     %%% hava arttırma katsayısı
+set.bro=100;  %SÃ½nÃ½r hesabÃ½ iÃ§in
+set.dzks=1.1; %dz arttÃ½rma oranÃ½
+set.bounAirC=2;     %%% hava arttÃ½rma katsayÃ½sÃ½
 set.bounLandC=2;
-set.bounMaxL=100;  %%% Kaç kata uzasın
-set.minblok=24;  %Bölme
+set.bounMaxL=100;  %%% KaÃ§ kata uzasÃ½n
+set.minblok=24;  %BÃ¶lme
 set.manualsd=50000;  %metre
 set.autosd=1;
 set.maxsd=7000000;  %metre
 set.initial1D=1;
-% set.skindepthortam=1;  %skin depth e göre ortam
+% set.skindepthortam=1;  %skin depth e gÃ¶re ortam
 set.meshbol=1;  %%% mesh refinement
 set.meshmerge=1;
 set.meshmergeincludez=0;
@@ -173,19 +173,19 @@ set.errorfloorZyx=0.03;
 set.errorfloorT=0.03;
 
 
-%%% Süre ve yazdırmaca
-set.time=0;   %%%Bireysel polarizasyon-frekans çözümü
+%%% SÃ¼re ve yazdÃ½rmaca
+set.time=0;   %%%Bireysel polarizasyon-frekans Ã§Ã¶zÃ¼mÃ¼
 set.relres=0;
 set.frekans=0;
 set.surefhazir=0;
 set.sureBhazir=1;
 set.sureJp=1;
 set.sureJTdd=1;
-set.sureForward=1; %%%Toplam  çözümü
-set.sureOneIt=1; %%%Toplam  çözümü
+set.sureForward=1; %%%Toplam  Ã§Ã¶zÃ¼mÃ¼
+set.sureOneIt=1; %%%Toplam  Ã§Ã¶zÃ¼mÃ¼
 
 
-%%%%%%% Çizdirmece %%%%%%%%%%%%%%%%%
+%%%%%%% Ã‡izdirmece %%%%%%%%%%%%%%%%%
 set.errbar=[-0.05 0.05];
 set.cizgisiz=1;
 set.duseyImage=1;
@@ -208,14 +208,14 @@ set.anisotropy=1;
 set.sitegain=0;
 
 
-%%%%%%%%Gürültü%%%%%%%%%%%%%%%%%%
+%%%%%%%%GÃ¼rÃ¼ltÃ¼%%%%%%%%%%%%%%%%%%
 set.noiseAdd=0;
 set.noiseZ=0.02;
 set.noiseT=0.03;
-set.tipperrand=0;  %Disttortion için
+set.tipperrand=0;  %Disttortion iÃ§in
 
 
-%%% Kayıt ve sayaçlar
+%%% KayÃ½t ve sayaÃ§lar
 set.rdmd=[];
 set.modelr=[];
 set.distr=[];
@@ -237,7 +237,7 @@ set.OneItSaveTime=[];
 % set.RMSpt=[];
 % set.RMSpv=[];
 
-%%% sigma katsayı
+%%% sigma katsayÃ½
 set.katWZ=1;
 set.katWW=sqrt(1);
 set.katWPT=sqrt(2);

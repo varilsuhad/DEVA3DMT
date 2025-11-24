@@ -92,7 +92,7 @@ for j=1:size(EL,1)
         yuzey(i,11)=zb;
 
         if(kk~=ebhava+1)
-        fprintf('Bir nokta için yerin altında yer bulundu (İlk blok değil) j\n');    
+        fprintf('Bir nokta iÃ§in yerin altÃ½nda yer bulundu (Ãlk blok deÃ°il) j\n');    
         end   
     end
 end
@@ -100,7 +100,7 @@ end
 
 for i=1:size(recv,1)
     if (yuzey(i,1)==0)
-    fprintf('Bir nokta için yer bulunamadı (Hava aranmadı) i=%d \n',i);    
+    fprintf('Bir nokta iÃ§in yer bulunamadÃ½ (Hava aranmadÃ½) i=%d \n',i);    
     end
 end
 
@@ -183,10 +183,10 @@ end
 %    yuzey(i,11)=recv(i,3);
 %    
 %    if(kk~=ebhava+1)
-%    fprintf('Bir nokta için yerin altında yer bulundu (İlk blok değil)\n');    
+%    fprintf('Bir nokta iÃ§in yerin altÃ½nda yer bulundu (Ãlk blok deÃ°il)\n');    
 %    end
 %    else
-%    fprintf('Bir nokta için yer bulunamadı (Hava aranmadı) \n');    
+%    fprintf('Bir nokta iÃ§in yer bulunamadÃ½ (Hava aranmadÃ½) \n');    
 %    end
 %    
 % end

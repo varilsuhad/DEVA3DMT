@@ -193,7 +193,7 @@ end
     nro(ekbloky+ny+1:end,ekblokx+nx+1:end,ebhava+k)=ro(ny,nx,k);    
     end
     
-    % büyük köseler
+    % bÃ¼yÃ¼k kÃ¶seler
     for k=1:ekblokz
     % sol arka   
     nro(1:ekbloky+1,1:ekblokx+1,ebhava+nz+k)=ro(1,1,nz);   
@@ -211,13 +211,13 @@ end
 %     nro
     %alt slice
     
-    % nx yönü
+    % nx yÃ¶nÃ¼
     for i=2:nx-1
         nro(1:ekbloky,ekblokx+i,ebhava+nz+1:end)=ro(1,i,nz);
         nro(ekbloky+ny+1:end,ekblokx+i,ebhava+nz+1:end)=ro(ny,i,nz);
     end
     
-    %ny yönü
+    %ny yÃ¶nÃ¼
     
     for j=2:ny-1
          nro(ekbloky+j,1:ekblokx,ebhava+nz+1:end)=ro(j,1,nz);

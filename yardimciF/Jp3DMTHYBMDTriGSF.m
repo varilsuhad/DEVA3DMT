@@ -106,7 +106,7 @@ for i=1:nf
     x1=(xx(:,1));
     x2=(xx(:,2));
 
-    PC.veri(i).s2a=(x1);   %% ikinci türevler için  
+    PC.veri(i).s2a=(x1);   %% ikinci tÃ¼revler iÃ§in  
     PC.veri(i).s2b=(x2);  
 
     res(i,1:2)=relres;        
