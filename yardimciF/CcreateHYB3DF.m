@@ -126,7 +126,7 @@ DM.C4=C4;
 DM.C5=C5;
 DM.C6=C6;
 
-% Olmasý gereken Distortion deðerleri default values D0 için olabilir yada
+% Olması gereken Distortion değerleri default values D0 için olabilir ya da
 % initial
 ara=[1 0 0 1 0 0];
 for i=1:length(f)

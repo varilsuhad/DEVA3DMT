@@ -50,7 +50,7 @@ for ii=1:totL
 %         sind(acix) 0 cosd(acix)];
 %     Ry= [1 0 0; ...
 %         0 cosd(aciy) -sind(aciy);...
-%         0 sind(aciy) cosd(aciy)];  %%x etrafýnda döner
+%         0 sind(aciy) cosd(aciy)];  %%x etrafında döner
     
     if (set.duzolcum==1)
     Rx=[1 0 0; 0 1 0; 0 0 1];    
@@ -61,7 +61,7 @@ for ii=1:totL
         sind(acix) 0 cosd(acix)];
     Ry= [1 0 0; ...
         0 cosd(aciy) -sind(aciy);...
-        0 sind(aciy) cosd(aciy)];  %%x etrafýnda döner
+        0 sind(aciy) cosd(aciy)];  %%x etrafında döner
     end
     
     aci=-set.olcurotasyonxy;
@@ -90,15 +90,15 @@ for ii=1:totL
   
 end
 
-%%% E'nin A'sýný      f ile çarpýlýr
+%%% E'nin A'sını      f ile çarpılır
 L1x=sparse(ix1,iy1,ie1,totL,totE);
 L1y=sparse(ix1,iy1,ie2,totL,totE);
 L1z=sparse(ix1,iy1,ie3,totL,totE);
-%%%E'nin v'sini       - ile çarpýlýr
+%%%E'nin v'sini       - ile çarpılır
 L2x=sparse(ix2,iy2,iv1,totL,totE);
 L2y=sparse(ix2,iy2,iv2,totL,totE);
 L2z=sparse(ix2,iy2,iv3,totL,totE);
-%%% H'ý                sade böyle
+%%% H'ı                sade böyle
 L3x=sparse(ix1,iy1,ih1,totL,totE);
 L3y=sparse(ix1,iy1,ih2,totL,totE);
 L3z=sparse(ix1,iy1,ih3,totL,totE);

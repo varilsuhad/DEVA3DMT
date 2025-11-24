@@ -61,7 +61,7 @@ set.relresForward={};
 set.equalgrad=1;
 set.extrapadding=0;
 
-%%%%Çeþitli debug vs
+%%%%Çeşitli debug vs
 set.skipDiscretization=0;
 set.skipMapMesh=0;
 
@@ -69,7 +69,7 @@ set.skipCovariance=0;
 set.ekblokgoster=0;
 set.GaussQuadDeg=3; 
 set.randDD=0;   %random deltad
-set.changexy=0;  %Z lerin yerini deðiþtir ÖNEMLÝ!
+set.changexy=0;  %Z lerin yerini değiştir ÖNEMLİ!
 set.adilpaylastirkat=1.0;
 set.saveEH=0;
 set.gatherveri=0;
@@ -87,22 +87,22 @@ set.initial1Dinterp=0;
 set.equalgrad=1;
 
 
-set.denizblok=0;  %%%% sýfýr yaptým 2 idi
+set.denizblok=0;  %%%% sıfır yaptım 2 idi
 set.denizkarablok=0;
 
 
 %%% Forward calculation
 set.rotatedH=0;
-set.AliciOrtada=1;  %% ikiside 0 ise alýcý nerdeyse
+set.AliciOrtada=1;  %% ikiside 0 ise alıcı neredeyse
 set.AliciYuzeyde=0;
 set.maxit=200;
 set.limForward=10^-9;
 set.limDiger=10^-9;
 set.limDigerGN=10^-8;
 set.gpu=1;
-set.duzolcum=1;    %% Rotasyon yok elektrik alanda düþey olarak
-set.olcurotasyonxy=0;  %% Elektrik ve manyetik alaný x-y düzleminde rotasyona uðrat
-%%%Kapadým ki yanlýþlýkla sýfýr olmasýn
+set.duzolcum=1;    %% Rotasyon yok elektrik alanda düşey olarak
+set.olcurotasyonxy=0;  %% Elektrik ve manyetik alanı x-y düzleminde rotasyona uğrat
+%%%Kapadım ki yanlışlıkla sıfır olmasın
 
 %%% Hybrid
 set.hybridpadblok=2;
@@ -120,7 +120,7 @@ set.lambda=300;
 set.kappa=set.lambda*30;
 set.kappaPlambda=1;
 
-%%% Durdurma ve Ýlerleme
+%%% Durdurma ve İlerleme
 set.limitkappa=-2;
 set.kappabol=2;
 set.lambdabol=2;
@@ -133,16 +133,16 @@ set.stoprms=0.001;
 set.stopmisfit=0.001;
 
 
-%%% Baþlangýç modeli
+%%% Başlangıç modeli
 set.havaro=10^8;
 set.waterro=0.33;
 set.sdro=100; %En küçük blok için
 set.iro=100;  %Matrisi bunla doldur
-set.bro=100;  %Sýnýr hesabý için
-set.dzks=1.1; %dz arttýrma oraný
-set.bounAirC=2;     %%% hava arttýrma katsayýsý
+set.bro=100;  %Sınır hesabı için
+set.dzks=1.1; %dz arttırma oranı
+set.bounAirC=2;     %%% hava arttırma katsayısı
 set.bounLandC=2;
-set.bounMaxL=100;  %%% Kaç kata uzasýn
+set.bounMaxL=100;  %%% Kaç kata uzasın
 set.minblok=24;  %Bölme
 set.manualsd=50000;  %metre
 set.autosd=1;
@@ -155,7 +155,7 @@ set.meshmergeincludez=0;
 set.refineinterp='linear';   %%% cubic linear
 
 %%% 1D inversion
-set.MT1DInvEmp=1;  %%1D inversion 1-empedans yada 0-log(ro)+faz
+set.MT1DInvEmp=1;  %%1D inversion 1-empedans ya da 0-log(ro)+faz
 set.MT1Dfigures=1;
 set.MT1Drmslim=0.2;
 set.MT1Dmflim=0.5;
@@ -173,7 +173,7 @@ set.errorfloorZyx=0.03;
 set.errorfloorT=0.03;
 
 
-%%% Süre ve yazdýrmaca
+%%% Süre ve yazdırmaca
 set.time=0;   %%%Bireysel polarizasyon-frekans çözümü
 set.relres=0;
 set.frekans=0;
@@ -215,7 +215,7 @@ set.noiseT=0.03;
 set.tipperrand=0;  %Disttortion için
 
 
-%%% Kayýt ve sayaçlar
+%%% Kayıt ve sayaçlar
 set.rdmd=[];
 set.modelr=[];
 set.distr=[];
@@ -237,7 +237,7 @@ set.OneItSaveTime=[];
 % set.RMSpt=[];
 % set.RMSpv=[];
 
-%%% sigma katsayý
+%%% sigma katsayı
 set.katWZ=1;
 set.katWW=sqrt(1);
 set.katWPT=sqrt(2);
