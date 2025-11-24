@@ -9,8 +9,6 @@ data2=NaN(nf,ns,24,0);
 end
 
 st=tic;
-
-% [x,y,z] = refinemesh3DF(x,y,z,set);
 recv(:,3)=-(recv(:,3));
 dx=(x(2:end)-x(1:end-1));
 dy=(y(2:end)-y(1:end-1));
@@ -21,8 +19,7 @@ recv=zeros(size(al,1),4);
 recv(:,1:3)=al;
 end
 
-%     [data,f,dz,zmax,roi,roa] = anablokDataF(data,f,set);
-% set.minblok=8;  %%%EKLENDI
+
 [data,f,dz,zmax,roi,roa] = anablokDataF(data,f,set);
 ny=length(dy);
 nx=length(dx);
@@ -44,8 +41,6 @@ end
 xcorr=sum(nhx(1:ekblokx))-x(1);
 ycorr=sum(nhy(1:ekbloky))-y(1);
 zcorr=sum(nhz(1:ebhava));
-
-% [NK,buyukz1,buyukz2]=topoEkleW3DMTF(NK,ebhava,z,nhz,0.5);    %%%%2
 
 [NK,buyukz]=topoEkle3DMTF(NK,ebhava,z,nhz,0.25);  %%%%1
 NK(:,:,:,1)=NK(:,:,:,1)-xcorr;
@@ -93,7 +88,6 @@ base.nro=nro;
 base.Adx=0;
 base.Ady=0;
 
-% L=L3DMTF(base.EL,base.NK,base.yuzey,set);
 [DM,D]=CcreateHYB3DF(yuzey,f);
 
 base.C1=C;
@@ -108,7 +102,6 @@ ind=find(recv(:,4)~=0);
 [~,ss]=sort(recv(ind,4));
 ind=ind(ss);
 base.brecvlist=ind;
-% base.WM=speye(length(m));
 
 base.WE=[];
 
