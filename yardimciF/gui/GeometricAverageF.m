@@ -1,6 +1,4 @@
 function [Zort] = GeometricAverageF(Z)
-%UNTÝTLED3 Summary of this function goes here
-%   Detailed explanation goes here
 
 N=length(Z);
 

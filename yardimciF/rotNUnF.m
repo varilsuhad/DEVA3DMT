@@ -1,6 +1,4 @@
 function [RN,N,M] = rotNUnF(lx,ly,lz,J,a,b,c,RN,N,M)
-%UNTÝTLED5 Summary of this function goes here
-%   Detailed explanation goes here
 
 s1=J(1,1);
 s2=J(2,1);

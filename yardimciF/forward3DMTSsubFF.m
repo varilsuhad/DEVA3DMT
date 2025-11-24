@@ -2,14 +2,6 @@ function [veri,base] = forward3DMTSsubFF(base,f,set,nof)
 
 
 
-% if (set.frekans==1)
-% fprintf('frekans=%f \n',f);
-% end
-% 
-%     
-%     if(set.time==1)
-%     t=tic;
-%     end
     if(set.zeroinitialx==1)
     base.xfor{nof}=zeros(size(base.xfor{nof}));
     end
@@ -36,11 +28,8 @@ function [veri,base] = forward3DMTSsubFF(base,f,set,nof)
     end    
 
 
-    % fprintf('warning -> relres=%e but the limit is set to %e, frequency=%fHz\n',relres,set.limForward,f);    
-
-
     if(relres>set.limForward*ek)
-    fprintf('warning -> relres=%e but the limit is set to %e, frequency=%fHz\n',relres,set.limForward*ek,f);    
+    fprintf('warning -> relres=%e but the limit is set to %e, frequency=%fHz\n',relres,set.limForward*ek,f);
     end
     
     if(relres>set.limForward*ek)
@@ -51,7 +40,6 @@ function [veri,base] = forward3DMTSsubFF(base,f,set,nof)
         else
         [x2,r2,relres2]=gpbicgmexP2FFsD(base.rowA,base.colA,base.valA,complex(base.bstack),base.rowM,base.colM,(base.valM),set.limForward*ek,set.maxit,set.stagdetect,complex(base.xfor{nof})); 
         end
-    % fprintf('New relres=%e and the limit=%e, f=%f\n',gather(relres),set.limForward,f);
         if(relres2<relres)
         fprintf('New relres=%e and the limit=%e, f=%f\n',gather(relres2),set.limForward*ek,f);
         x=x2;
@@ -69,10 +57,6 @@ function [veri,base] = forward3DMTSsubFF(base,f,set,nof)
     base.rowM=[];
     base.colM=[];
     base.valM=[];    
-
-% if(set.time==1)
-% toc(t);
-% end
 
 x=gather(reshape(x,[],2));
 res(1,1:2)=gather(relres);

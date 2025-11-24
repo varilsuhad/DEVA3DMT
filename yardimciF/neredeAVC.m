@@ -1,6 +1,4 @@
 function [ say ] = neredeAVC(i,j,k,nx,ny,nz,no )
-%UNTÝTLED Summary of this function goes here
-%   Detailed explanation goes here
 
 noAx=nx*(ny-1)*(nz-1);
 noAy=(nx-1)*(ny)*(nz-1);

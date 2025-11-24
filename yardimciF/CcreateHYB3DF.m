@@ -1,5 +1,4 @@
 function [DM,D] = CcreateHYB3DF(yuzey,f)
-%UNTÝTLED3 Summary of this function goes here
 
 tot=size(yuzey,1);
 
@@ -127,7 +126,7 @@ DM.C4=C4;
 DM.C5=C5;
 DM.C6=C6;
 
-% Olmasý gereken Distortion deðerleri default values D0 için olabilir yada
+% OlmasÃ½ gereken Distortion deÃ°erleri default values D0 iÃ§in olabilir yada
 % initial
 ara=[1 0 0 1 0 0];
 for i=1:length(f)

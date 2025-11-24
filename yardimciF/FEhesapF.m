@@ -1,6 +1,4 @@
 function [Ex,Ey,Ez,Hx,Hy,Hz] = FEhesapF(EL,NK,xx,f,yuzey,set)
-%UNTÝTLED Summary of this function goes here
-%   Detailed explanation goes here
 
 mu=4*pi*10^-7;
 
