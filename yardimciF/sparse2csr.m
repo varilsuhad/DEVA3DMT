@@ -1,6 +1,3 @@
-% © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
-% Contact: deniz.varilsuha@itu.edu.tr
-% Convert a MATLAB sparse matrix to CSR arrays for GPU routines.
 function [val, row_ptr, col_ind] = sparse2csr(A, base)
 %SPARSE2CSR Convert MATLAB sparse matrix to CSR format.
 %   To convert a CSC matrix instead of a CSR matrix to a sparse matrix
