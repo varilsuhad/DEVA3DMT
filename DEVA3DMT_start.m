@@ -4,7 +4,7 @@
 
 clear all;clc;close all;
 
-inputmatrix='testinput.mat';  %%% INPUT MATRIX FROM COMING FROM THE GUI
+inputmatrix='testinput.mat';  %%% INPUT MATRIX COMING FROM THE GUI
 
 outputfolder='C:\Users\denizv\Desktop\SVALBARD'; %%% OUTPUT FOLDER
 outputname='firstinv'; %%% FILENAME TO WRITE EACH INVERSION STEP
