@@ -1124,13 +1124,6 @@ for i=1:nf
     tk8=nnz(find(isnan(data(i,k,26,:))==0));
     tk9=nnz(find(isnan(data(i,k,37,:))==0));
 
-    % if((isnan(tk1)==1 && isnan(tk2)==1 && tk3==0 && tk4==0 && tk5==0 && tk6==0 && tk7==0 && tk8==0 && tk9==0)  ...
-    %     || set.sw(5)=='0' || (set.sw(2)=='0' && set.sw(1)=='0' && set.sw2(1)=='0' && set.sw2(2)=='0' && set.sw2(6)=='0' && set.sw2(7)=='0' && set.sw(18)=='0' && set.sw(19)=='0' && set.sw(25)=='0'))
-    % else
-    % c=c+1;
-    % cc=cc+1;ix(cc)=c;iy(cc)=(k-1)*6+1;iv(cc)=1;
-    % end
-
     if((isnan(tk1)==1 && isnan(tk2)==1 && tk3==0 && tk4==0 && tk7==0 && tk8==0 && tk9==0)  ...
         || set.sw(5)=='0' || (set.sw(2)=='0' && set.sw(1)=='0' && set.sw2(1)=='0' && set.sw2(2)=='0' && set.sw2(6)=='0' && set.sw2(7)=='0' && set.sw(18)=='0' && set.sw(19)=='0' && set.sw(25)=='0'))
     else
@@ -1150,12 +1143,6 @@ for i=1:nf
     tk8=nnz(find(isnan(data(i,k,26,:))==0));
     tk9=nnz(find(isnan(data(i,k,37,:))==0));
 
-    % if((isnan(tk1)==1 && isnan(tk2)==1 && tk3==0 && tk4==0 && tk5==0 && tk6==0 && tk7==0 && tk8==0 && tk9==0) ...
-    %    || set.sw(5)=='0' || (set.sw(2)=='0' && set.sw(1)=='0' && set.sw2(1)=='0' && set.sw2(2)=='0' && set.sw2(6)=='0' && set.sw2(7)=='0' && set.sw(18)=='0' && set.sw(19)=='0' && set.sw(25)=='0'))
-    % else
-    % c=c+1;
-    % cc=cc+1;ix(cc)=c;iy(cc)=(k-1)*6+2;iv(cc)=1;
-    % end
 
     if((isnan(tk1)==1 && isnan(tk2)==1 && tk3==0 && tk4==0 && tk7==0 && tk8==0 && tk9==0) ...
        || set.sw(5)=='0' || (set.sw(2)=='0' && set.sw(1)=='0' && set.sw2(1)=='0' && set.sw2(2)=='0' && set.sw2(6)=='0' && set.sw2(7)=='0' && set.sw(18)=='0' && set.sw(19)=='0' && set.sw(25)=='0'))
@@ -1176,13 +1163,6 @@ for i=1:nf
     tk8=nnz(find(isnan(data(i,k,28,:))==0));
     tk9=nnz(find(isnan(data(i,k,37,:))==0));
 
-    % if((isnan(tk1)==1 && isnan(tk2)==1 && tk3==0 && tk4==0 && tk5==0 && tk6==0 && tk7==0 && tk8==0 && tk9==0) ...
-    %    || set.sw(5)=='0' || (set.sw(3)=='0' && set.sw(4)=='0'  && set.sw2(3)=='0' && set.sw2(4)=='0' && set.sw2(8)=='0' && set.sw2(9)=='0' && set.sw(20)=='0' && set.sw(21)=='0' && set.sw(25)=='0'))
-    % else
-    % c=c+1;
-    % cc=cc+1;ix(cc)=c;iy(cc)=(k-1)*6+3;iv(cc)=1;
-    % end
-
     if((isnan(tk1)==1 && isnan(tk2)==1 && tk3==0 && tk4==0 && tk7==0 && tk8==0 && tk9==0) ...
        || set.sw(5)=='0' || (set.sw(3)=='0' && set.sw(4)=='0'  && set.sw2(3)=='0' && set.sw2(4)=='0' && set.sw2(8)=='0' && set.sw2(9)=='0' && set.sw(20)=='0' && set.sw(21)=='0' && set.sw(25)=='0'))
     else
@@ -1200,13 +1180,6 @@ for i=1:nf
     tk7=nnz(find(isnan(data(i,k,27,:))==0));
     tk8=nnz(find(isnan(data(i,k,28,:))==0));
     tk9=nnz(find(isnan(data(i,k,37,:))==0));
-
-    % if((isnan(tk1)==1 && isnan(tk2)==1 && tk3==0 && tk4==0 && tk5==0 && tk6==0 && tk7==0 && tk8==0 && tk9==0) ...
-    %     || set.sw(5)=='0' || (set.sw(3)=='0' && set.sw(4)=='0' && set.sw2(3)=='0' && set.sw2(4)=='0' && set.sw2(8)=='0' && set.sw2(9)=='0' && set.sw(20)=='0' && set.sw(21)=='0' && set.sw(25)=='0'))
-    % else
-    % c=c+1;
-    % cc=cc+1;ix(cc)=c;iy(cc)=(k-1)*6+4;iv(cc)=1;
-    % end
 
     if((isnan(tk1)==1 && isnan(tk2)==1 && tk3==0 && tk4==0 && tk7==0 && tk8==0 && tk9==0) ...
         || set.sw(5)=='0' || (set.sw(3)=='0' && set.sw(4)=='0' && set.sw2(3)=='0' && set.sw2(4)=='0' && set.sw2(8)=='0' && set.sw2(9)=='0' && set.sw(20)=='0' && set.sw(21)=='0' && set.sw(25)=='0'))
