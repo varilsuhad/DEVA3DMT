@@ -2,7 +2,6 @@
 % Contact: deniz.varilsuha@itu.edu.tr
 function [dz]=anablok3DMDF(f,set)
 
-
 oran=set.minblok;
 ks=set.dzks;
 
@@ -13,13 +12,11 @@ mi=min(503.2*sqrt(rort./f)');
 ma=max(d);
 
 if(set.autosd==0)
-    
-ma=set.manualsd;   
+
+ma=set.manualsd;
 end
 
-
 st=mi/oran; %80 iyi gibi
-
 
 c=1;
 dz(1)=st;

@@ -2,10 +2,9 @@
 % Contact: deniz.varilsuha@itu.edu.tr
 function [base,set] = basekurSF(x,y,z,f,recv,set,data,data2)
 
-
 if(exist('data')==1 && exist('data2')==0)
 [nf,ns,~]=size(data);
-data2=NaN(nf,ns,24,0);    
+data2=NaN(nf,ns,24,0);
 end
 
 st=tic;
@@ -16,7 +15,7 @@ dx=(x(2:end)-x(1:end-1));
 dy=(y(2:end)-y(1:end-1));
 
 if(size(recv,2)==3)
-al=recv(:,1:3);    
+al=recv(:,1:3);
 recv=zeros(size(al,1),4);
 recv(:,1:3)=al;
 end
@@ -30,24 +29,20 @@ nz=length(dz);
 ro=ones(ny,nx,nz);
 for i=1:nx
     for j=1:ny
-    ro(j,i,:)=roi;    
+    ro(j,i,:)=roi;
     end
-end   
+end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [ nro,nhx,nhy,nhz,ekblokx,ekbloky,ebhava,ekblokz] = blokayar3DF(ro,dx,dy,dz,min(f),set);
 
-
 [ro,dz,ekblokz] = moreParameterF(ro,ebhava,ekblokz,dz,nhz);  %Yeni Eklendi
-
-
 
 [EL,NK]=ELNK3DMTF(nro,nhx,nhy,nhz);
 xcorr=sum(nhx(1:ekblokx))-x(1);
 ycorr=sum(nhy(1:ekbloky))-y(1);
 zcorr=sum(nhz(1:ebhava));
-
 
 % [NK,buyukz1,buyukz2]=topoEkleW3DMTF(NK,ebhava,z,nhz,0.5);    %%%%2
 
@@ -61,17 +56,11 @@ NK(:,:,:,3)=NK(:,:,:,3)-zcorr;
 %%%%%%%%%%%%%%%%%%m buradan
 [EL,param,m,params,Re]=parametre3DMTF(EL,NK,ro,ekblokx,ekbloky,ekblokz,ebhava); %m direk sigma
 
-
-
-
 % [NK,EL] = waterparameterF(EL,NK,buyukz1,buyukz2,ebhava);  %%%%2
-
 
 % pause;
 
-
 [FE,FD] = findDistorted3DMTF(NK,set);
-
 
 % % if (set.skipCovariance~=1)
 [C]=kovaryans3DMTF(NK,param,ekblokx,ekbloky,ekblokz,ebhava);  %%% Şunu sadeleştir
@@ -80,10 +69,10 @@ NK(:,:,:,3)=NK(:,:,:,3)-zcorr;
 % end
 
 % if(set.allFE==1)
-% FE=ones(size(FE));    
-% FD=zeros(size(FD));    
+% FE=ones(size(FE));
+% FD=zeros(size(FD));
 % end
-% 
+%
 % o1=nnz(FD);
 % o2=nnz(FE);
 % o3=o1+o2;
@@ -94,10 +83,8 @@ NK(:,:,:,3)=NK(:,:,:,3)-zcorr;
 % end
 [yuzey]=yuzeybul3DMTF(recv,NK,EL,ebhava,set);
 
-
-
 % if (set.skipDiscretization~=1)
-% [Z] = MT1DALLF(dz,ones(size(ro,3),1)*100,f);  
+% [Z] = MT1DALLF(dz,ones(size(ro,3),1)*100,f);
 % base=base3DMTHYBF(NK,EL,FD,FE,set);
 % end
 base.ro=ro;
@@ -110,7 +97,6 @@ base.nro=nro;
 
 base.Adx=0;
 base.Ady=0;
-
 
 % L=L3DMTF(base.EL,base.NK,base.yuzey,set);
 [DM,D]=CcreateHYB3DF(yuzey,f);
@@ -131,33 +117,25 @@ base.brecvlist=ind;
 
 base.WE=[];
 
-
-
 [WE,totD,totC,base]=elimination3DMTALLFFF(data,data2,set,base);
 
-
- 
 base.totC=totC;
 base.totD=totD;
-
 
 base.WE=WE;
 
 fprintf('Parameters(m)=%d, Distortion(C)=%d, Complex?=%d ->in Total=%d\n',length(Re*m),totC,set.complexdist,length(Re*m)+totC);
 fprintf('Data=%d, frequencies=%d, stations=%d \n',totD,size(data,1),size(data,2));
 
-    
 base.C2=spdiags(ones(totC,1),0,totC,totC);
 zero=sparse(size(base.C1,1),totC);
 
-
-base.CC=[set.lambda*base.C1'*base.C1 zero; zero' set.kappa*base.C2]; 
-base.CS=[sqrt(set.lambda)*base.C1 zero; zero' sqrt(set.kappa)*base.C2]; 
+base.CC=[set.lambda*base.C1'*base.C1 zero; zero' set.kappa*base.C2];
+base.CS=[sqrt(set.lambda)*base.C1 zero; zero' sqrt(set.kappa)*base.C2];
 ek1=speye(base.totP)*set.preDiagAdd;
 ek2=speye(base.totC)*set.preDiagAdd;
 
-base.M=[set.lambda*(base.C1'*base.C1+ek1) zero; zero' set.kappa*(base.C2+ek2)]; 
-
+base.M=[set.lambda*(base.C1'*base.C1+ek1) zero; zero' set.kappa*(base.C2+ek2)];
 
 if(set.baseME==1)
 base.ME=base.M*base.M/10^100;
@@ -166,25 +144,18 @@ base.ME=base.M/10^100;
 end
 base.M=base.ME+base.M;
 
-
 U=ichol(base.M);
 base.ML=U;
 base.MU=transpose(U);
-
-        
 
 base.ekblokx=ekblokx;
 base.ekbloky=ekbloky;
 base.ebhava=ebhava;
 
-
 [nyo,nxo,nzo]=size(base.ro);
 [Sr,Sc,Sv,N]=meshmergeB(int32(nxo),int32(nyo),int32(nzo),int32(set.meshmerge));
 WM=csr2sparse(gather(Sv),gather(Sr),gather(Sc),N);
 clear Sr Sc Sv
-
-
-
 
 base.recv=recv;
 
@@ -204,26 +175,21 @@ base.nhx=nhx;
 base.nhy=nhy;
 base.nhz=nhz;
 
-
 % [pay] = ortampaylastirF(f,set);
 
 d=base.d;
 brecvlist=base.brecvlist;
-
-
 
 o1=nnz(FD);
 o2=nnz(FE);
 o3=o1+o2;
 fprintf('Regions -> FE=%%%.2f and FD=%%%.2f\n',o2/o3*100,o1/o3*100);
 
-
 if((o2/o3*100)>80)
 FE=ones(size(FE));
 FD=zeros(size(FD));
 fprintf('Converted to Regions -> FE=%%%.2f and FD=%%%.2f\n',100,0);
 end
-
 
 pause(0.1);
 
@@ -235,8 +201,6 @@ ELg=gpuArray(EL);
 FDg=gpuArray(FD);
 FEg=gpuArray(FE);
 
-
-
 nx=length(nhx);
 ny=length(nhy);
 nz=length(nhz);
@@ -244,8 +208,6 @@ NKg=gpuArray(NK);
 ELg=gpuArray(EL);
 FDg=gpuArray(FD);
 FEg=gpuArray(FE);
-
-
 
 [base.AK1v,base.AK1c,base.AK1r,base.AK2v,base.AK2c,base.AK2r,base.AK3v,base.AK3c,base.AK3r,base.AK0v,base.AK0c,base.AK0r,...
 base.AM1v,base.AM1c,base.AM1r,base.AM2v,base.AM2c,base.AM2r,base.AM3v,base.AM3c,base.AM3r,base.AM4v,base.AM4c,base.AM4r, ...
@@ -263,8 +225,6 @@ base.W1v,base.W1c,base.W1r,base.W2v,base.W2c,base.W2r,base.W3v,base.W3c,base.W3r
 base.W5v,base.W5c,base.W5r,base.W6v,base.W6c,base.W6r,base.W7v,base.W7c,base.W7r,base.W8v,base.W8c,base.W8r, ...
 base.b]=stiffnessmultiCF(NKg,int32(ELg),int32(FDg),int32(FEg),int32(nx),int32(ny),int32(nz));
 
-
-
 base.EL=EL;
 base.NK=NK;
 
@@ -277,7 +237,6 @@ base.L=L;
 % base.flist=flist;
 base.flist=f;
 
-
 [nyo,nxo,nzo]=size(ro);
 
 ko=0:N-1;
@@ -287,14 +246,10 @@ base.Wr=gpuArray(int32(ko));
 ko=ones(N,1);
 base.Wv=gpuArray(ko);
 
-
 merge=set.meshmerge;
 [base.WMr,base.WMc,base.WMv,base.Sr,base.Sc,base.Sv,N2]=meshmergeCF(int32(nxo),int32(nyo),int32(nzo),int32(merge),base.Wr,base.Wc,base.Wv);
 base.WM=csr2sparse(gather(base.WMv),gather(base.WMr),gather(base.WMc),N);
 base.Sr=[];base.Sc=[];pase.Sv=[];
-
-
-
 
 base.Re=Re;
 
@@ -328,7 +283,6 @@ base.WRsize=WRsize;
 
 N=size(base.b,1);
 
-
 xfor=cell(length(base.flist),1);
 xJT=cell(length(base.flist),1);
 xJp=cell(length(base.flist),1);
@@ -351,13 +305,7 @@ base.xSoUs=xSoUs;
 base.xSoUs2=xSoUs2;
 base.xSaUs=xSaUs;
 
-
 base.N=size(base.L.L1x,2);
-
-
-
-
-
 
 % spmd
 % NK=NK;
@@ -370,7 +318,6 @@ base.N=size(base.L.L1x,2);
 % d=d;
 % brecvlist=brecvlist;
 % end
-
 
 % save('basekur.mat','nhx','nhy','nhz','NK','EL','FD','FE');
 
@@ -386,31 +333,24 @@ base.N=size(base.L.L1x,2);
 % gpuDevice(spmdIndex);
 % end
 
-
-
 st=toc(st);
 fprintf('auxiliary matrices are formed in %.2f secs\n',st);
 
-
-
-
-
-
 % fprintf('Fine forward meshes are created in %.2f secs\n',st);
-% 
+%
 % kat=2;
 % set.minblok=set.minblok/kat;
 % [x0,y0,z0] = reducesurface(x,y,z,kat,set);
-% 
-% 
-% 
+%
+%
+%
 % ii=find(z0<0);
 % z0(z0<0)=0;
 % if(isempty(ii)~=0)
 % warning('z0<0 -> z0=0');
 % fprintf('z0<0 -> z0=0, %d points\n',ii);
 % end
-% 
+%
 % % tic
 % % [paseB] = pasehazirlaF(base,pay,f,x0,y0,z0,zmax,roa,recv,set);
 % % toc
@@ -420,7 +360,7 @@ fprintf('auxiliary matrices are formed in %.2f secs\n',st);
 %     fprintf('Creating coarser forward meshes\n',st);
 %     % [paseB] = pasehazirlaFFF(NK,ro,ebhava,ekblokx,ekbloky,WE,totC,D,m,d,brecvlist,pay,f,x0,y0,z0,zmax,roa,recv,set);
 %     [paseB] = pasehazirlaCF(NK,ro,ebhava,ekblokx,ekbloky,WE,totC,D,Re,m,d,brecvlist,pay,f,x0,y0,z0,zmax,roa,recv,set);
-% 
+%
 %     st=toc(st);
 %     fprintf('Coarser forward meshes are created in %.2f secs\n',st);
 % else
@@ -429,9 +369,9 @@ fprintf('auxiliary matrices are formed in %.2f secs\n',st);
 %     paseB.FE=zeros(1);
 %     paseB.EL=zeros(1,20);
 % end
-% 
-% 
-% 
+%
+%
+%
 % spmd
 % FEA=nnz(paseA.FE);
 % FDA=nnz(paseA.FD);
@@ -441,10 +381,10 @@ fprintf('auxiliary matrices are formed in %.2f secs\n',st);
 % FDAo=FDA/(FEA+FDA);
 % FEBo=FEB/(FEB+FDB);
 % FDBo=FDB/(FEB+FDB);
-% 
+%
 % DoFfine=max(max(paseA.EL(:,1:20)));
 % DoFcoarse=max(max(paseB.EL(:,1:20)));
-% 
+%
 % fno=nnz(pay(:,spmdIndex));
 % if (spmdIndex~=1)
 % spmdSend(DoFfine,1,1);
@@ -456,7 +396,7 @@ fprintf('auxiliary matrices are formed in %.2f secs\n',st);
 % spmdSend(FDBo,1,7);
 % end
 % if(spmdIndex==1)
-% fnos(1)=fno; 
+% fnos(1)=fno;
 % DoFfines(1)=DoFfine;
 % DoFcoarses(1)=DoFcoarse;
 % FEAos(1)=FEAo;
@@ -464,7 +404,7 @@ fprintf('auxiliary matrices are formed in %.2f secs\n',st);
 % FEBos(1)=FEBo;
 % FDBos(1)=FDBo;
 % for i=2:set.nworkers
-% DoFfines(i)=spmdReceive(i,1);    
+% DoFfines(i)=spmdReceive(i,1);
 % fnos(i)=spmdReceive(i,2);
 % DoFcoarses(i)=spmdReceive(i,3);
 % FEAos(i)=spmdReceive(i,4);
@@ -474,10 +414,10 @@ fprintf('auxiliary matrices are formed in %.2f secs\n',st);
 % end
 % end
 % end
-% 
-% 
-% 
-% 
+%
+%
+%
+%
 % DoFfines=DoFfines{1};
 % fnos=fnos{1};
 % DoFcoarses=DoFcoarses{1};
@@ -485,20 +425,19 @@ fprintf('auxiliary matrices are formed in %.2f secs\n',st);
 % FDAos=FDAos{1};
 % FEBos=FEBos{1};
 % FDBos=FDBos{1};
-% 
-% 
+%
+%
 % sz = [set.nworkers 7];
 % varTypes = ["double","string","double","string","double","string","double"];
 % varNames = ["no","GPU Name","DoF (fine mesh)","FD/FE ratio F.","DoF (coarse mesh)","FD/FE ratio C.","frequency number"];
 % temps = table('Size',sz,'VariableTypes',varTypes,'VariableNames',varNames);
 % gpuT=gpuDeviceTable;
-% 
+%
 % format longG;
 % for i=1:set.nworkers
 % temps(i,:)={i,gpuT{set.useGPUs(i),2},(DoFfines(i)),strcat(num2str(FDAos(i),'%.2f'),'/',num2str(FEAos(i),'%.2f')),(DoFcoarses(i)),strcat(num2str(FDBos(i),'%.2f'),'/',num2str(FEBos(i),'%.2f')),(fnos(i))};
 % end
 % disp(temps);
-
 
 % spmd
 % gpuDevice(spmdIndex);

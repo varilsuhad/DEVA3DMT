@@ -28,7 +28,6 @@ for i=1:nf
     dd=gpuArray(dd);
     [bb1,bb2,bb3] = Lmergemexff(PC,PC.veri(i),i,2,dd,dd,dd,set);
 
-
     if(f>=10)
         ek=10^-1;
     else
@@ -81,9 +80,7 @@ for i=1:nf
         end
     end
 
-
     PC.rowA=[];PC.colA=[];PC.valA=[];PC.rowM=[];PC.colM=[];PC.valM=[];
-
 
     PC.xJT{i}=xx;
     xx=reshape(xx,[],2);
@@ -95,15 +92,11 @@ for i=1:nf
     res(i,1:2)=relres;
     top2=top2+length(r);
 
-
     top=top+toc(ss);
     [ Px1,Px2 ] = Pmerge3DMTHYBS3MULTFF3mex(PC,PC.veri(i),2,x1,x2,set);
 
-
-
     ara1=(real(Px1)+real(Px2));
     grad=grad+[ara1;real(bb3)];
-
 
 end
 grad=gather(grad);
@@ -124,7 +117,5 @@ set.JTiteration(end+1)=top2;
 if(set.sureJTdd==1)
     fprintf('JT*deltad is calculated in %.2f secs \n but Iteration time is %.2f secs\n Total iteration = %d\n',aa,top,top2);
 end
-
-
 
 end

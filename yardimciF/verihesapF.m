@@ -3,60 +3,57 @@
 function [veri] = verihesapF(base,x,f,nof,res,set)
 mu=4*pi*10^-7;
 
-
-
-
 [Ex1,Ey1,Ez1,Hx1,Hy1,Hz1] = FEhesapF(base.EL,base.NK,x(:,1),f,base.yuzey,set);  %Ey1/Hx1
-[Ex2,Ey2,Ez2,Hx2,Hy2,Hz2] = FEhesapF(base.EL,base.NK,x(:,2),f,base.yuzey,set);  %Ex2/Hy2   
+[Ex2,Ey2,Ez2,Hx2,Hy2,Hz2] = FEhesapF(base.EL,base.NK,x(:,2),f,base.yuzey,set);  %Ex2/Hy2
 
 [veri]=Zhesap3DMTF(Ex1,Ex2,Ey1,Ey2,Hx1,Hx2,Hy1,Hy2,Ez1,Ez2,Hz1,Hz2,base,nof);
 
 % veri.E(1,1)
-% if(set.changexy==1) 
-% Z=veri.Z;  
+% if(set.changexy==1)
+% Z=veri.Z;
 % veri.Z(:,1)=-Z(:,4);
 % veri.Z(:,2)=-Z(:,3);
 % veri.Z(:,3)=-Z(:,2);
 % veri.Z(:,4)=-Z(:,1);
-%    
-% Z0=veri.Z0;  
+%
+% Z0=veri.Z0;
 % veri.Z0(:,1)=-Z0(:,4);
 % veri.Z0(:,2)=-Z0(:,3);
 % veri.Z0(:,3)=-Z0(:,2);
 % veri.Z0(:,4)=-Z0(:,1);
-% 
-% A0=veri.A0;  
+%
+% A0=veri.A0;
 % veri.A0(:,1)=-A0(:,4);
 % veri.A0(:,2)=-A0(:,3);
 % veri.A0(:,3)=-A0(:,2);
 % veri.A0(:,4)=-A0(:,1);
-% 
-% T0=veri.T0;  
+%
+% T0=veri.T0;
 % veri.T0(:,1)=T0(:,2);
 % veri.T0(:,2)=T0(:,1);
-% 
-% T=veri.T;  
+%
+% T=veri.T;
 % veri.T(:,1)=T(:,2);
 % veri.T(:,2)=T(:,1);
-% 
-% % P=veri.P;  
+%
+% % P=veri.P;
 % % veri.P(:,1)=P(:,4);
 % % veri.P(:,2)=P(:,3);
 % % veri.P(:,3)=P(:,2);
 % % veri.P(:,4)=P(:,1);
-% 
-% IE=veri.IE;  
+%
+% IE=veri.IE;
 % veri.IE(:,1)=IE(:,4);
 % veri.IE(:,4)=-IE(:,1);
 % veri.IE(:,2)=-IE(:,3);
 % veri.IE(:,3)=IE(:,2);
-% 
-% IH=veri.IH;  
+%
+% IH=veri.IH;
 % veri.IH(:,1)=IH(:,4);
 % veri.IH(:,4)=-IH(:,1);
 % veri.IH(:,2)=-IH(:,3);
 % veri.IH(:,3)=IH(:,2);
-% 
+%
 % end
 
 ro1=abs(veri.Z).^2./(mu*2*pi*f);
@@ -105,7 +102,7 @@ nb=length(base.brecvlist);
 %         veri.PT(:,2);...
 %         veri.PT(:,3);...
 %         veri.PT(:,4);...
-%         veri.PV(:,1);...        
+%         veri.PV(:,1);...
 %         veri.PV(:,2);...
 %         veri.PA(:,1);...
 %         veri.PA(:,2);...
@@ -132,7 +129,7 @@ vektor=[veri.Z(:,1);...
         veri.PT(:,2);...
         veri.PT(:,3);...
         veri.PT(:,4);...
-        veri.PV(:,1);...        
+        veri.PV(:,1);...
         veri.PV(:,2);...
         veri.PA(:,1);...
         veri.PA(:,2);...
@@ -141,7 +138,7 @@ vektor=[veri.Z(:,1);...
         veri.PB(:,1);...
         veri.PB(:,2);...
         veri.Det(:,1)];
-    
+
 for j=1:nb
     vektor=[vektor;squeeze(veri.Qt(:,1,j))];
 end
@@ -194,7 +191,6 @@ for j=1:nb
     vektor=[vektor;squeeze(veri.Yt(:,4,j))];
 end
 
-
 for j=1:nb
     vektor=[vektor;squeeze(veri.Ot(:,1,j))];
 end
@@ -208,17 +204,14 @@ for j=1:nb
     vektor=[vektor;squeeze(veri.Ot(:,4,j))];
 end
 
-
 if(set.forwardElek==1)
     veri.Fi=base.WE.WL{nof}*vektor;
 end
-
 
 veri.vektor=vektor;
 
 veri.e1=x(:,1);
 veri.e2=x(:,2);
-
 
 end
 

@@ -2,7 +2,6 @@
 % Contact: deniz.varilsuha@itu.edu.tr
 function [pase] = freqmergeCF(pase,f,set)
 
-
 if(set.MatrixStacking==1)
 
 [pase.rowA,pase.colA,pase.valA,pase.rowM,pase.colM,pase.valM]=freqmergemCF(pase.T1r,pase.T1c,pase.T1v,pase.T2r,pase.T2c,pase.T2v,pase.T3r,pase.T3c,pase.T3v...
@@ -14,6 +13,5 @@ else
 
 pase.bstack=gpuArray(pase.b(:));
 end
-
 
 end

@@ -9,7 +9,6 @@ function [det,sigD] = varianceDF(Zd,e)
         sigD=det;
         return
     end
-        
 
 det=sqrt((Zd(1,1)^2+Zd(1,2)^2+Zd(2,1)^2+Zd(2,2)^2)/2);
 
@@ -19,6 +18,6 @@ zyx1=0.5*inv(det)*Zd(2,1);
 zyy1=0.5*inv(det)*Zd(2,2);
 
 sigD(1,1)=abs(sqrt(zxx1^2*e(1,1)^2+zxy1^2*e(1,2)^2 +zyx1^2*e(2,1)^2+zyy1^2*e(2,1)^2));
-          
+
 end
 

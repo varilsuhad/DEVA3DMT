@@ -2,7 +2,6 @@
 % Contact: deniz.varilsuha@itu.edu.tr
 function [aa] = topoEkleSubF(nhz,goal,ebhava,ek)
 
-
 kati=1+ek;
 katg=1-ek;
 
@@ -11,19 +10,19 @@ aa=[0 cumsum(nhz)']';
 ok=0;
 elseif(goal>0)
 ok=1;
-top=0;    
+top=0;
 nhzy=nhz;
 for i=ebhava:-1:1
-    
+
     if( i==2)
         error('topografya hatasi1');
-    end    
-    
+    end
+
     top=top+nhzy(i)*(1-katg);
     nhzy(i)=nhzy(i)*katg;
     if (top>goal)
     fark=top-goal;
-    nhzy(i)=nhzy(i)+fark;    
+    nhzy(i)=nhzy(i)+fark;
     break;
     end
 
@@ -31,36 +30,36 @@ end
 
 top=0;
 for i=ebhava+1:1:length(nhz)
-    
+
     if( i==length(nhz)-1)
         error('topografya hatasi2');
-    end      
-    
+    end
+
     top=top+nhzy(i)*(kati-1);
     nhzy(i)=nhzy(i)*kati;
     if (top>goal)
     fark=top-goal;
-    nhzy(i)=nhzy(i)-fark;    
+    nhzy(i)=nhzy(i)-fark;
     break;
     end
-  
+
 end
 aa=[0 cumsum(nhzy)']';
 elseif (goal<0)
-ok=1;    
-top=0;    
+ok=1;
+top=0;
 nhzy=nhz;
 for i=ebhava:-1:1
-    
+
     if( i==2)
         error('topografya hatasi3');
-    end    
-    
+    end
+
     top=top+nhzy(i)*(kati-1);
     nhzy(i)=nhzy(i)*kati;
     if (top>abs(goal))
     fark=top-abs(goal);
-    nhzy(i)=nhzy(i)-fark;    
+    nhzy(i)=nhzy(i)-fark;
     break;
     end
 
@@ -68,25 +67,24 @@ end
 
 top=0;
 for i=ebhava+1:1:length(nhz)
-    
+
     if( i==length(nhz)-1)
         error('topografya hatasi4');
-    end       
-    
+    end
+
     top=top+nhzy(i)*(1-katg);
     nhzy(i)=nhzy(i)*katg;
     if (top>abs(goal))
     fark=top-abs(goal);
-    nhzy(i)=nhzy(i)+fark;    
+    nhzy(i)=nhzy(i)+fark;
     break;
     end
- 
-end    
+
+end
 aa=[0 cumsum(nhzy)']';
 else
     error('Topografya bir hata\n');
 end
-
 
 end
 

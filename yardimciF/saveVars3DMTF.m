@@ -2,7 +2,6 @@
 % Contact: deniz.varilsuha@itu.edu.tr
 function [] = saveVars3DMTF(base,set,F,ii,path0,ok,r0,s1,y1,ro1)
 
-
 if (ok==1)
 % bas.yuzey=base.yuzey;
 % bas.FD=base.FD;
@@ -14,7 +13,7 @@ if (ok==1)
 % bas.WM=base.WM;
 % % bas.x=base.x;
 % bas.recv=base.recv;
-% 
+%
 % bas.ekblokx=base.ekblokx;
 % bas.ekbloky=base.ekbloky;
 % bas.ebhava=base.ebhava;
@@ -62,7 +61,6 @@ bas.koor=base.koor;
 bas.koorm=base.koorm;
 end
 
-
 base=bas;
 dir =strcat(path0,'.mat');
 save(dir,'base','set');
@@ -70,28 +68,25 @@ save(dir,'base','set');
 
 end
 
-if(ok==2)  
+if(ok==2)
     dir =strcat(path0,num2str(ii),'.mat');
     D=base.D;
     D1=base.D1;
     m=base.m;
 
-    % save(dir,'m','F','D','D1','set'); 
-    
-    smooth=base.smooth;
-    save(dir,'m','F','D','D1','set','smooth'); 
- 
-end
+    % save(dir,'m','F','D','D1','set');
 
+    smooth=base.smooth;
+    save(dir,'m','F','D','D1','set','smooth');
+
+end
 
 if(ok==3)
-    dir =strcat(path0,num2str(0),'.mat');   
+    dir =strcat(path0,num2str(0),'.mat');
     ML=base.ML;
-    MU=base.MU;    
-    save(dir,'r0','s1','y1','ro1','ML','MU');   
+    MU=base.MU;
+    save(dir,'r0','s1','y1','ro1','ML','MU');
 end
-
-
 
 end
 

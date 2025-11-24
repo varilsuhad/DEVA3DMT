@@ -31,12 +31,11 @@ elseif(set.MT1DInvEmp==1)
         [Z2,go2,faz2] = MT1DF(dz,ro2,f);
         hep2=Z2;
         J(:,i)=[hep2-hep1]/h;
-    end       
+    end
 else
-    
+
     fprintf('Bir hata var 1D inversion \n');
 end
-
 
 end
 
