@@ -153,11 +153,6 @@ clear Sr Sc Sv
 
 base.recv=recv;
 
-% pase=0;
-% spmd
-% pase=base;
-% end
-
 %%%% Diğer %%%%
 base.dx=dx(:);
 base.dy=dy(:);
@@ -243,7 +238,7 @@ base.Wv=gpuArray(ko);
 merge=set.meshmerge;
 [base.WMr,base.WMc,base.WMv,base.Sr,base.Sc,base.Sv,N2]=meshmergeCF(int32(nxo),int32(nyo),int32(nzo),int32(merge),base.Wr,base.Wc,base.Wv);
 base.WM=csr2sparse(gather(base.WMv),gather(base.WMr),gather(base.WMc),N);
-base.Sr=[];base.Sc=[];pase.Sv=[];
+base.Sr=[];base.Sc=[];base.Sv=[];
 
 base.Re=Re;
 
