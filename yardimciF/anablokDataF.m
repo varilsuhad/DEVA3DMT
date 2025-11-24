@@ -2,8 +2,8 @@ function [datay,fy,dzy,zmaxy,roiy,roa] = anablokDataF(data,f,set)
 
 
 
-%%% frekansa baðlý olarak olarak dzleri oluþtur
-%%% Eðer istenirse verilen datayý 1D fit et
+%%% frekansa bağlı olarak olarak dzleri oluştur
+%%% Eğer istenirse verilen datayı 1D fit et
 set.autosd=1;
 dz=anablok3DMDF(f,set);
 if(set.initial1D==1)
@@ -14,11 +14,11 @@ else
     roi=ones(size(dz))*set.iro;
 end
 
-%%% Skindepth hesabýna göre eriþilen derinlikleri hesapla
+%%% Skindepth hesabına göre erişilen derinlikleri hesapla
 [zmax,roa]=skindepthaverageMDF(roi,dz,set,f);
 fprintf('Medium maximum depth=%.1fkm and reachable max depth=%.1fkm\n',sum(dz)/1000,zmax(end)/1000);
 
-%%% Eðer eriþilen derinlik daha kýsaysa dzleri tekrar oluþtur 
+%%% Eğer erişilen derinlik daha kısaysa dzleri tekrar oluştur
 %%% ve tekrar 1D fit yap
 if(sum(dz)>zmax(end))
 %     fprintf('Medium maximum depth=%.1fkm and reachable max depth=%.1fkm\n  KIRPTIM\n',sum(dz),zmax(end));   
@@ -32,11 +32,11 @@ if(sum(dz)>zmax(end))
         roi=ones(size(dz))*set.iro;    
     end
     [zmax,roa]=skindepthaverageMDF(roi,dz,set,f);
-    fprintf('Ortam maxd=%f ve eriþilen maxd=%f\n',sum(dz),zmax(end));
+    fprintf('Ortam maxd=%f ve erişilen maxd=%f\n',sum(dz),zmax(end));
 end
 
-%%% Eðer eriþilen derinlik eldeki meshin derinliðinden daha fazla ise
-%%% dz sayýsýný arttýr.
+%%% Eğer erişilen derinlik eldeki meshin derinliğinden daha fazla ise
+%%% dz sayısını arttır.
 if(sum(dz)<zmax(end))
 c=0;
 while(sum(dz)<zmax(end))
@@ -44,14 +44,14 @@ while(sum(dz)<zmax(end))
     c=c+1;
 end
  roi(end+1:end+c)=roi(end);   
- fprintf('Yeni ortam maxd=%f ve eklenen blok=%d\n',sum(dz),c); 
+ fprintf('Yeni ortam maxd=%f ve eklenen blok=%d\n',sum(dz),c);
 end
 
-%%% Eðer belirlenen maximum derinlik frekansýn eriþebileceði derinlikten
-%%% kýsaysa bazý frekanslarý at
+%%% Eğer belirlenen maximum derinlik frekansın erişebileceği derinlikten
+%%% kısaysa bazı frekansları at
 
 if(zmax(end)>set.maxsd)
-    fprintf('eriþilen maxd=%f ve berirlenen max=%f d\n',zmax(end),set.maxsd);
+    fprintf('erişilen maxd=%f ve belirlenen max=%f d\n',zmax(end),set.maxsd);
        
     fy=f;
     zmaxy=zmax;    
@@ -68,7 +68,7 @@ if(zmax(end)>set.maxsd)
     ind2=find(sdz>set.maxsd);
     roiy(ind2)=[];
     dzy(ind2)=[];
-    fprintf('Atýlan frekans=%d ve dz blok=%d adet\n',length(ind),length(ind2));
+    fprintf('Atılan frekans=%d ve dz blok=%d adet\n',length(ind),length(ind2));
 else
     datay=data;    
     dzy=dz;    

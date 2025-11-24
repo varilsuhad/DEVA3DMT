@@ -1123,17 +1123,17 @@ for i=1:nf
     Wd{i}=spdiags(ww,0,c,c);      
     
 end
-% Burasý modifiye edilir yeni veri eklenince
+% Burası modifiye edilir yeni veri eklenince
 
 
 %%%soldan çarp ele
 WE.WL=WL;
 
-%%%soldan çarp aðýrlýklandýr
+%%%soldan çarp ağırlıklandır
 WE.Wd=Wd;
 WE.WD=spdiags(wwD,0,c2,c2); 
 
-%%% saðdan çarp
+%%% sağdan çarp
 for i=1:nf
     c=0;
     cc=0;
@@ -1341,7 +1341,7 @@ base.D0=[real(base.D0);imag(base.D0)];
 end
 
 
-%%%%  saðdan çarp ele distorsiyon
+%%%%  sağdan çarp ele distorsiyon
 WE.WR=WR;
 
 totC=0;

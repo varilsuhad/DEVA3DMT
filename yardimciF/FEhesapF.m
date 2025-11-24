@@ -81,7 +81,7 @@ for ii=1:tot
         sind(acix) 0 cosd(acix)];
     Ry= [1 0 0; ...
         0 cosd(aciy) -sind(aciy);...
-        0 sind(aciy) cosd(aciy)];  %%x etrafýnda döner
+        0 sind(aciy) cosd(aciy)];  %%x etrafında döner
     end
     
     aci=-set.olcurotasyonxy;
