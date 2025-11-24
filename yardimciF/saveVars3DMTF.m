@@ -4,27 +4,6 @@
 function [] = saveVars3DMTF(base,set,F,ii,path0,ok,r0,s1,y1,ro1)
 
 if (ok==1)
-% bas.yuzey=base.yuzey;
-% bas.FD=base.FD;
-% bas.FE=base.FE;
-% bas.EL=base.EL;
-% bas.NK=base.NK;
-% bas.ro=base.ro;
-% bas.WE=base.WE;
-% bas.WM=base.WM;
-% % bas.x=base.x;
-% bas.recv=base.recv;
-%
-% bas.ekblokx=base.ekblokx;
-% bas.ekbloky=base.ekbloky;
-% bas.ebhava=base.ebhava;
-% bas.ro=base.ro;
-% bas.d=base.d;
-% bas.f=base.f;
-% bas.m=base.m;
-% bas.D=base.D;
-% base=bas;
-
 bas.m=base.m;
 bas.D=base.D;
 bas.f=base.f;
