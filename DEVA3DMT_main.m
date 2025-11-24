@@ -3,7 +3,7 @@
 function [] = DEVA3DMT_main(inputmatrix,outputfolder,outputname)
 format longG
 
-%%%%% Ayar Y�kle
+%%%%% Ayar Yükle
 [set]=settings3DMTF();
 
 d=gpuDevice;

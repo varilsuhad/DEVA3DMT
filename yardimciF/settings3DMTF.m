@@ -201,7 +201,7 @@ set.sitegain=0;
 set.noiseAdd=0;
 set.noiseZ=0.02;
 set.noiseT=0.03;
-set.tipperrand=0;  %Disttortion için
+set.tipperrand=0;  %Distortion için
 
 %%% Kayıt ve sayaçlar
 set.rdmd=[];
