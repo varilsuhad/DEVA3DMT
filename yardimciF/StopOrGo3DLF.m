@@ -124,7 +124,7 @@ if((set.rdmd(uu))>set.limitkappa && uu>1 && (set.sw(5)=='1' || set.sw(9)=='1'))
 %     base.ML=transpose(U);
 %     base.MU=U;
 %     else
-%     error('Hatalı ihol yada ilu\n');    
+%     error('HatalÃ½ ihol yada ilu\n');    
 %     end
 %     
     % set.rs=0;

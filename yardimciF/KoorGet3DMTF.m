@@ -41,7 +41,7 @@ b=m(2);
 c=m(3);
 
 if(a<-1 || a>1 || c<-1 || c>1)
-% fprintf('Yanlış var a=%f b=%f c=%f\n',a,b,c); 
+% fprintf('YanlÃ½Ã¾ var a=%f b=%f c=%f\n',a,b,c); 
 err=-2;
 end
 
