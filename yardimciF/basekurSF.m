@@ -57,7 +57,6 @@ NK(:,:,:,3)=NK(:,:,:,3)-zcorr;
 [EL,param,m,params,Re]=parametre3DMTF(EL,NK,ro,ekblokx,ekbloky,ekblokz,ebhava); %m direk sigma
 
 % [NK,EL] = waterparameterF(EL,NK,buyukz1,buyukz2,ebhava);  %%%%2
-
 % pause;
 
 [FE,FD] = findDistorted3DMTF(NK,set);
@@ -72,21 +71,16 @@ NK(:,:,:,3)=NK(:,:,:,3)-zcorr;
 % FE=ones(size(FE));
 % FD=zeros(size(FD));
 % end
-%
+
 % o1=nnz(FD);
 % o2=nnz(FE);
 % o3=o1+o2;
 % fprintf('FE=%%%.2f and FD=%%%.2f regions\n',o2/o3*100,o1/o3*100);
 
-% if (set.cizdirFEFD==1)
-% cizdirFEFD3DMTF(FE);pause(0.01);
-% end
+
 [yuzey]=yuzeybul3DMTF(recv,NK,EL,ebhava,set);
 
-% if (set.skipDiscretization~=1)
-% [Z] = MT1DALLF(dz,ones(size(ro,3),1)*100,f);
-% base=base3DMTHYBF(NK,EL,FD,FE,set);
-% end
+
 base.ro=ro;
 
 base.m=m;%%%%logunu almayı unutma kovaryansla kullanırken
@@ -307,141 +301,10 @@ base.xSaUs=xSaUs;
 
 base.N=size(base.L.L1x,2);
 
-% spmd
-% NK=NK;
-% ro=ro;
-% ekblokx=ekblokx;
-% ekbloky=ekbloky;
-% WE=WE;
-% D=D;
-% m=m;
-% d=d;
-% brecvlist=brecvlist;
-% end
-
-% save('basekur.mat','nhx','nhy','nhz','NK','EL','FD','FE');
-
-% nx=length(nhx);
-% ny=length(nhy);
-% nz=length(nhz);
-% NKg=gpuArray(NK);
-% ELg=gpuArray(EL);
-% FDg=gpuArray(FD);
-% FEg=gpuArray(FE);
-
-% spmd
-% gpuDevice(spmdIndex);
-% end
-
 st=toc(st);
 fprintf('auxiliary matrices are formed in %.2f secs\n',st);
 
-% fprintf('Fine forward meshes are created in %.2f secs\n',st);
-%
-% kat=2;
-% set.minblok=set.minblok/kat;
-% [x0,y0,z0] = reducesurface(x,y,z,kat,set);
-%
-%
-%
-% ii=find(z0<0);
-% z0(z0<0)=0;
-% if(isempty(ii)~=0)
-% warning('z0<0 -> z0=0');
-% fprintf('z0<0 -> z0=0, %d points\n',ii);
-% end
-%
-% % tic
-% % [paseB] = pasehazirlaF(base,pay,f,x0,y0,z0,zmax,roa,recv,set);
-% % toc
-% % tic
-% if(set.triplemesh==1 && set.singleforwardmesh==0)
-%     st=tic;
-%     fprintf('Creating coarser forward meshes\n',st);
-%     % [paseB] = pasehazirlaFFF(NK,ro,ebhava,ekblokx,ekbloky,WE,totC,D,m,d,brecvlist,pay,f,x0,y0,z0,zmax,roa,recv,set);
-%     [paseB] = pasehazirlaCF(NK,ro,ebhava,ekblokx,ekbloky,WE,totC,D,Re,m,d,brecvlist,pay,f,x0,y0,z0,zmax,roa,recv,set);
-%
-%     st=toc(st);
-%     fprintf('Coarser forward meshes are created in %.2f secs\n',st);
-% else
-%     fprintf('No triple mesh design ... \n');
-%     paseB.FD=zeros(1);
-%     paseB.FE=zeros(1);
-%     paseB.EL=zeros(1,20);
-% end
-%
-%
-%
-% spmd
-% FEA=nnz(paseA.FE);
-% FDA=nnz(paseA.FD);
-% FEB=nnz(paseB.FE);
-% FDB=nnz(paseB.FD);
-% FEAo=FEA/(FEA+FDA);
-% FDAo=FDA/(FEA+FDA);
-% FEBo=FEB/(FEB+FDB);
-% FDBo=FDB/(FEB+FDB);
-%
-% DoFfine=max(max(paseA.EL(:,1:20)));
-% DoFcoarse=max(max(paseB.EL(:,1:20)));
-%
-% fno=nnz(pay(:,spmdIndex));
-% if (spmdIndex~=1)
-% spmdSend(DoFfine,1,1);
-% spmdSend(fno,1,2);
-% spmdSend(DoFcoarse,1,3);
-% spmdSend(FEAo,1,4);
-% spmdSend(FDAo,1,5);
-% spmdSend(FEBo,1,6);
-% spmdSend(FDBo,1,7);
-% end
-% if(spmdIndex==1)
-% fnos(1)=fno;
-% DoFfines(1)=DoFfine;
-% DoFcoarses(1)=DoFcoarse;
-% FEAos(1)=FEAo;
-% FDAos(1)=FDAo;
-% FEBos(1)=FEBo;
-% FDBos(1)=FDBo;
-% for i=2:set.nworkers
-% DoFfines(i)=spmdReceive(i,1);
-% fnos(i)=spmdReceive(i,2);
-% DoFcoarses(i)=spmdReceive(i,3);
-% FEAos(i)=spmdReceive(i,4);
-% FDAos(i)=spmdReceive(i,5);
-% FEBos(i)=spmdReceive(i,6);
-% FDBos(i)=spmdReceive(i,7);
-% end
-% end
-% end
-%
-%
-%
-%
-% DoFfines=DoFfines{1};
-% fnos=fnos{1};
-% DoFcoarses=DoFcoarses{1};
-% FEAos=FEAos{1};
-% FDAos=FDAos{1};
-% FEBos=FEBos{1};
-% FDBos=FDBos{1};
-%
-%
-% sz = [set.nworkers 7];
-% varTypes = ["double","string","double","string","double","string","double"];
-% varNames = ["no","GPU Name","DoF (fine mesh)","FD/FE ratio F.","DoF (coarse mesh)","FD/FE ratio C.","frequency number"];
-% temps = table('Size',sz,'VariableTypes',varTypes,'VariableNames',varNames);
-% gpuT=gpuDeviceTable;
-%
-% format longG;
-% for i=1:set.nworkers
-% temps(i,:)={i,gpuT{set.useGPUs(i),2},(DoFfines(i)),strcat(num2str(FDAos(i),'%.2f'),'/',num2str(FEAos(i),'%.2f')),(DoFcoarses(i)),strcat(num2str(FDBos(i),'%.2f'),'/',num2str(FEBos(i),'%.2f')),(fnos(i))};
-% end
-% disp(temps);
 
-% spmd
-% gpuDevice(spmdIndex);
-% end
 
 end
 
