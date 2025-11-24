@@ -29,8 +29,6 @@ function [P,sigP] = variancePAF(Z,e)
     a2=(X4*Y2-X2*Y4)/det;
     a3=(X1*Y3-X3*Y1)/det;
     a4=(X1*Y4-X3*Y2)/det;
-%     H=(eye(2)+PHI*PHI')^0.5;
-%     P2=X*H;
 
 %%%%türevler  - X1
 a1tx1=-X4*(X4*Y1-X2*Y3)/det^2;

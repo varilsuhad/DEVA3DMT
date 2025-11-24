@@ -100,23 +100,8 @@ ara1=(real(Px1)+real(Px2));
 grad=grad+[ara1;(real(bb3))];
 
 end
-% grad=gather(grad);
-% grad=spmdReduce(@plus,grad,1);
-% res=spmdReduce(@plus,res,1);
-% top2=spmdReduce(@plus,top2,1);
-% top=spmdReduce(@max,top);
 
-% spmd
-% a=rand(4,1);
-% ag=gpuArray(a);
-% ne=gop(@plus,ag,1);
-%
-% end
 
-% top=top{1};
-% top2=top2{1};
-% res=res{1};
-% grad=grad{1};
 
 aa=toc(aa);
 set.JTddSaveTime(end+1)=aa;

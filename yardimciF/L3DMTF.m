@@ -45,13 +45,6 @@ for ii=1:totL
     aciy2=atand( (z(3)-z(2))/(y(3)-y(2)));
     aciy=-(aciy1+aciy2)/2;
 
-%     Rx=[cosd(acix) 0 -sind(acix);...
-%         0 1 0;...
-%         sind(acix) 0 cosd(acix)];
-%     Ry= [1 0 0; ...
-%         0 cosd(aciy) -sind(aciy);...
-%         0 sind(aciy) cosd(aciy)];  %%x etrafında döner
-
     if (set.duzolcum==1)
     Rx=[1 0 0; 0 1 0; 0 0 1];
     Ry=[1 0 0; 0 1 0; 0 0 1];

@@ -14,7 +14,6 @@ lx=zeros(4,1);
 ly=zeros(4,1);
 lz=zeros(4,1);
 
-% totP=max(max(max(param)));
 totP=max(param(:));
 
 cc=0;
@@ -183,7 +182,6 @@ for j=ekbloky+1:ny-ekbloky
 
             %%%orta
             cc=cc+1;ix(cc)=c;iy(cc)=c;iv(cc)=-1;
-%             iv(cc)=top;
 
             %i-1
             if(i==ekblokx+1 || param(j,i-1,k)<0)
