@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Recover physical coordinates inside a hexahedral element from reference coordinates (a,b,c).
 function [x1,y1,z1] = KoorGet3DX(x,y,z,a,b,c)
 
 ka=[-1 +1 +1 -1 -1 +1 +1 -1];

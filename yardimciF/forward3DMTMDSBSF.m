@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Run a full forward MT solve for a single frequency using the hybrid FE–FD engine and GPU solver.
 function [PC,set,veri] = forward3DMTMDSBSF(PC,f,set)
 
 aa=tic;

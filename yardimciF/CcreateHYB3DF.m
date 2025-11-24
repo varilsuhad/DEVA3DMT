@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Build distortion selector matrices and initialize default coefficients for all surface sites.
 function [DM,D] = CcreateHYB3DF(yuzey,f)
 
 tot=size(yuzey,1);

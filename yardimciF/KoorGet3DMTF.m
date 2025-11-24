@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Map physical hexahedron coordinates (x,y,z) to the reference element coordinates (a,b,c).
 function [a,b,c,err] = KoorGet3DMTF(x,y,z,xd,yd,zd)
 
 J=zeros(3,3);

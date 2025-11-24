@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Gather node coordinates and edge lengths for a hexahedral element at indices (i,j,k).
 function [x,y,z,lx,ly,lz ] = xyzlxlylz(x,y,z,lx,ly,lz,NK,i,j,k)
 x(1)=NK(j,i,k,1);
 x(2)=NK(j,i+1,k,1);

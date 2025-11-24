@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Estimate variances for impedance-derived determinant data and handle NaN/zero entries.
 function [det,sigD] = varianceDF(Zd,e)
 
     al=sum(isnan(Zd(:)));

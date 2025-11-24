@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Evaluate electric and magnetic field components at receiver surfaces using hybrid FE–FD fields.
 function [Ex,Ey,Ez,Hx,Hy,Hz] = FEhesapF(EL,NK,xx,f,yuzey,set)
 
 mu=4*pi*10^-7;

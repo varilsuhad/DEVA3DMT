@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Determine how many vertical cells must be removed to honor a desired surface elevation.
 function [aa] = topoEkleSubF(nhz,goal,ebhava,ek)
 
 kati=1+ek;

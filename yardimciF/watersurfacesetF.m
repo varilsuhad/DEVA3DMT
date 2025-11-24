@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Insert a water layer into the mesh coordinates and resistivity model according to bathymetry.
 function [NK,ro] = watersurfacesetF(NK,ebhava,z,ro,set)
 
 [ny,nx,nz,~]=size(NK);

@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Evaluate phase tensor variances using tipper-based inputs while guarding against invalid entries.
 function [P,sigP] = variancePBF(T,e)
 
     al=sum(isnan(T(:)));

@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Prepare frequency-dependent layer thicknesses and merged data arrays for the main block model.
 function [datay,fy,dzy,zmaxy,roiy,roa] = anablokDataF(data,f,set)
 
 %%% frekansa bağlı olarak olarak dzleri oluştur

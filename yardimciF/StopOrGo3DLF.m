@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Decide whether to continue the 3-D inversion based on cost reductions and stopping criteria.
 function [set,base] = StopOrGo3DLF(set,base,dm,alfa,uu,ne)
 
 bas=0;

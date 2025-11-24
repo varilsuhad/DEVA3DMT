@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Initialize the inversion settings structure with defaults tailored for hybrid MT runs.
 function [set] = settings3DMTF(nw,~)
 
 set.nworkers=0;

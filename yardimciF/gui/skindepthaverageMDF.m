@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Estimate average skin-depth parameters to size the 1-D model grid.
 function [zmax,roa,roi] = skindepthaverageMDF(roi,dz,set,f)
 
 minf=min(f);

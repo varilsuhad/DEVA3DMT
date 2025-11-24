@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Extend vertical layering and resistivity arrays after padding the mesh with air blocks.
 function [ro2,dz2,ekblokz2] = moreParameterF(ro,ebhava,ekblokz,dz,nhz)
 
 dz=dz(:);

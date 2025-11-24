@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Generate default vertical layering for quick 3-D model setup in the GUI helpers.
 function [dz]=anablok3DMDF(f,set)
 
 oran=set.minblok;

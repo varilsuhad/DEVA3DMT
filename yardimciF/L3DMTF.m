@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Build the observation matrix that interpolates rotated field components to measurement sites.
 function [L] = L3DMTF(EL,NK,yuzey,set)
 
 fprintf('Rotation angle(xy)=%.2f (L) \n',set.olcurotasyonxy);

@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Carve surface topography into the nodal coordinate grid and adjust vertical layering.
 function [NK,nz1] = topoEkle3DMTF(NK,ebhava,z,nhz,ek)
 
 [nny,nnx,~,~]=size(NK);

@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Multiply the hybrid Gauss–Newton Jacobian with a vector for iterative solves without forming J explicitly.
 function [grad,set,PC] = Jp3DMTHYBMDTriGSF(PC,p,set)
 
 aa=tic;

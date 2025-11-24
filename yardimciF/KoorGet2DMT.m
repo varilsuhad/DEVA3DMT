@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Map a physical quadrilateral (x,z) location to local coordinates within the reference element.
 function [a,c,err] = KoorGet2DMT(x,z,xd,zd)
 
 J=zeros(2,2);

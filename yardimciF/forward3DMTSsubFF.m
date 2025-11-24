@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Compute synthetic MT responses for all requested data types at a given frequency.
 function [veri,base] = forward3DMTSsubFF(base,f,set,nof)
 
     if(set.zeroinitialx==1)

@@ -1,5 +1,6 @@
 % © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
 % Contact: deniz.varilsuha@itu.edu.tr
+% Compute the geometric average impedance from a set of complex tensors.
 function [Zort] = GeometricAverageF(Z)
 
 N=length(Z);
