@@ -141,74 +141,74 @@ vektor=[veri.Z(:,1);...
         veri.Det(:,1)];
     
 for j=1:nb
-vektor=[vektor;squeeze(veri.Qt(:,1,j))];
-end 
+    vektor=[vektor;squeeze(veri.Qt(:,1,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Qt(:,2,j))];
-end   
+    vektor=[vektor;squeeze(veri.Qt(:,2,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Qt(:,3,j))];
-end   
+    vektor=[vektor;squeeze(veri.Qt(:,3,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Qt(:,4,j))];
-end 
+    vektor=[vektor;squeeze(veri.Qt(:,4,j))];
+end
 
 for j=1:nb
-vektor=[vektor;squeeze(veri.Tt(:,1,j))];
-end 
+    vektor=[vektor;squeeze(veri.Tt(:,1,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Tt(:,2,j))];
-end   
+    vektor=[vektor;squeeze(veri.Tt(:,2,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Tt(:,3,j))];
-end   
+    vektor=[vektor;squeeze(veri.Tt(:,3,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Tt(:,4,j))];
-end   
+    vektor=[vektor;squeeze(veri.Tt(:,4,j))];
+end
 
 for j=1:nb
-vektor=[vektor;squeeze(veri.Mt(:,1,j))];
-end 
+    vektor=[vektor;squeeze(veri.Mt(:,1,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Mt(:,2,j))];
-end   
+    vektor=[vektor;squeeze(veri.Mt(:,2,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Mt(:,3,j))];
-end   
+    vektor=[vektor;squeeze(veri.Mt(:,3,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Mt(:,4,j))];
-end   
+    vektor=[vektor;squeeze(veri.Mt(:,4,j))];
+end
 
 for j=1:nb
-vektor=[vektor;squeeze(veri.Yt(:,1,j))];
-end 
+    vektor=[vektor;squeeze(veri.Yt(:,1,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Yt(:,2,j))];
-end   
+    vektor=[vektor;squeeze(veri.Yt(:,2,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Yt(:,3,j))];
-end   
+    vektor=[vektor;squeeze(veri.Yt(:,3,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Yt(:,4,j))];
-end 
+    vektor=[vektor;squeeze(veri.Yt(:,4,j))];
+end
 
 
 for j=1:nb
-vektor=[vektor;squeeze(veri.Ot(:,1,j))];
-end 
+    vektor=[vektor;squeeze(veri.Ot(:,1,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Ot(:,2,j))];
-end   
+    vektor=[vektor;squeeze(veri.Ot(:,2,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Ot(:,3,j))];
-end   
+    vektor=[vektor;squeeze(veri.Ot(:,3,j))];
+end
 for j=1:nb
-vektor=[vektor;squeeze(veri.Ot(:,4,j))];
-end 
-    
+    vektor=[vektor;squeeze(veri.Ot(:,4,j))];
+end
 
-if(set.forwardElek==1)    
-veri.Fi=base.WE.WL{nof}*vektor;
+
+if(set.forwardElek==1)
+    veri.Fi=base.WE.WL{nof}*vektor;
 end
 
 
