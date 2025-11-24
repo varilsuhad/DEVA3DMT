@@ -8,53 +8,6 @@ mu=4*pi*10^-7;
 
 [veri]=Zhesap3DMTF(Ex1,Ex2,Ey1,Ey2,Hx1,Hx2,Hy1,Hy2,Ez1,Ez2,Hz1,Hz2,base,nof);
 
-% veri.E(1,1)
-% if(set.changexy==1)
-% Z=veri.Z;
-% veri.Z(:,1)=-Z(:,4);
-% veri.Z(:,2)=-Z(:,3);
-% veri.Z(:,3)=-Z(:,2);
-% veri.Z(:,4)=-Z(:,1);
-%
-% Z0=veri.Z0;
-% veri.Z0(:,1)=-Z0(:,4);
-% veri.Z0(:,2)=-Z0(:,3);
-% veri.Z0(:,3)=-Z0(:,2);
-% veri.Z0(:,4)=-Z0(:,1);
-%
-% A0=veri.A0;
-% veri.A0(:,1)=-A0(:,4);
-% veri.A0(:,2)=-A0(:,3);
-% veri.A0(:,3)=-A0(:,2);
-% veri.A0(:,4)=-A0(:,1);
-%
-% T0=veri.T0;
-% veri.T0(:,1)=T0(:,2);
-% veri.T0(:,2)=T0(:,1);
-%
-% T=veri.T;
-% veri.T(:,1)=T(:,2);
-% veri.T(:,2)=T(:,1);
-%
-% % P=veri.P;
-% % veri.P(:,1)=P(:,4);
-% % veri.P(:,2)=P(:,3);
-% % veri.P(:,3)=P(:,2);
-% % veri.P(:,4)=P(:,1);
-%
-% IE=veri.IE;
-% veri.IE(:,1)=IE(:,4);
-% veri.IE(:,4)=-IE(:,1);
-% veri.IE(:,2)=-IE(:,3);
-% veri.IE(:,3)=IE(:,2);
-%
-% IH=veri.IH;
-% veri.IH(:,1)=IH(:,4);
-% veri.IH(:,4)=-IH(:,1);
-% veri.IH(:,2)=-IH(:,3);
-% veri.IH(:,3)=IH(:,2);
-%
-% end
 
 ro1=abs(veri.Z).^2./(mu*2*pi*f);
 tro1=abs(veri.T).^2./(mu*2*pi*f);

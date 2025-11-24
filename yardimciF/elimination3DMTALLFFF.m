@@ -541,9 +541,6 @@ for i=1:nf
     if(set.rationalvar==1)
     sigPB=ones(size(sigPB))*max(PB(:))*0.05;
     end
-    % if(isnan(sigPB)==1)
-    % sigPB
-    % end
     c=c+1;
     cc=cc+1;ix(cc)=c;iy(cc)=c3;iv(cc)=1;
     ww(c,1)=1./sigPB(1)*katPB;
@@ -578,9 +575,6 @@ for i=1:nf
     if(set.rationalvar==1)
     sigPB=ones(size(sigPB))*max(PB(:))*0.05;
     end
-    % if(isnan(sigPB)==1)
-    % sigPB
-    % end
 
     c=c+1;
     cc=cc+1;ix(cc)=c;iy(cc)=c3;iv(cc)=1;
@@ -982,8 +976,6 @@ for i=1:nf
     continue;
     end
     [PT,sigPT,~,~] = variancePTF(Z,Ze,rand(2,1),rand(2,1));
-%     f1=max(abs(PT(:)));if(f1==0);f1=inf;end
-%     sigPT(1:2,1:2)=f1*0.05;
 
     c=c+1;
     cc=cc+1;ix(cc)=c;iy(cc)=c3;iv(cc)=1;
@@ -1019,8 +1011,6 @@ for i=1:nf
     continue;
     end
     [PT,sigPT,~,~] = variancePTF(Z,Ze,rand(2,1),rand(2,1));
-%     f1=max(abs(PT(:)));if(f1==0);f1=inf;end
-%     sigPT(1:2,1:2)=f1*0.05;
     c=c+1;
     cc=cc+1;ix(cc)=c;iy(cc)=c3;iv(cc)=1;
     ww(c,1)=1./sigPT(1,2)*katWO;
@@ -1055,8 +1045,6 @@ for i=1:nf
     continue;
     end
     [PT,sigPT,~,~] = variancePTF(Z,Ze,rand(2,1),rand(2,1));
-%     f1=max(abs(PT(:)));if(f1==0);f1=inf;end
-%     sigPT(1:2,1:2)=f1*0.05;
     c=c+1;
     cc=cc+1;ix(cc)=c;iy(cc)=c3;iv(cc)=1;
     ww(c,1)=1./sigPT(2,1)*katWO;
@@ -1091,8 +1079,6 @@ for i=1:nf
     continue;
     end
     [PT,sigPT,~,~] = variancePTF(Z,Ze,rand(2,1),rand(2,1));
-%     f1=max(abs(PT(:)));if(f1==0);f1=inf;end
-%     sigPT(1:2,1:2)=f1*0.05;
     c=c+1;
     cc=cc+1;ix(cc)=c;iy(cc)=c3;iv(cc)=1;
     ww(c,1)=1./sigPT(2,2)*katWO;
@@ -1262,10 +1248,6 @@ if(set.freqdependent==0)
     ix0=1:length(iy0);
     iv0=ones(size(ix0));
 
-%     ara=max(ix0);if(isempty(ara)==1);ara=0;end
-%     w=sparse(ix0,iy0,ones(size(iy0)),ara,nist*6);
-%     [ix0,iy0,iv0]=find(w);
-%     iv0=ones(length(iv0),1);
 
     for i=1:nf
         ara=max(ix0);
@@ -1317,7 +1299,6 @@ end
 base.liste=liste;
 
 if(set.complexdist==1)
-% D0=[real(D0);imag(D0)];
 base.D0=[real(base.D0);imag(base.D0)];
 end
 

@@ -19,16 +19,9 @@ for i=1:nf
 
     bol=2;
 
-%     if(zxx==1 || zxy==1 || zyx==1 || zyy==1)
-%      continue;
-%     else
-%      v=[data(i,j,7);data(i,j,8);data(i,j,9);data(i,j,10)];
-%     end
-
     v=[];
     if (zxy==1)
         bol=bol-1;
-%         Z(1)=NaN;
     else
         v1=data(i,j,8);
         if(~(isnan(v1) || v1==0))
@@ -38,7 +31,6 @@ for i=1:nf
 
     if (zyx==1)
         bol=bol-1;
-%         Z(4)=NaN;
     else
         v1=data(i,j,9);
         if(~(isnan(v1) || v1==0))

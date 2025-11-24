@@ -2,11 +2,6 @@
 % Contact: deniz.varilsuha@itu.edu.tr
 function [set] = settings3DMTF(nw,~)
 
-%
-% clear mex          % unload every MEX file
-% gpuDevice([]);     % empty selection resets the current device handle
-% rehash toolboxcache
-
 set.nworkers=0;
 
 if(nargin==1)
@@ -15,7 +10,6 @@ p = gcp('nocreate');
 
 if (isempty(p))
     c=parpool(nw);
-    % c.AdditionalProperties.EnableFullDiagnosticLogs = true;
     else
     if(p.NumWorkers~=nw)
     delete(gcp('nocreate'));
@@ -105,7 +99,6 @@ set.allFE=0;
 set.hybridfill=1;
 
 %%% Ters çözüm
-% set.dataweighting=1;
 set.freqdependent=0;
 set.complexdist=0;
 set.preDiagAdd=0.12;

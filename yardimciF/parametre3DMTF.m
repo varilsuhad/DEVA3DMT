@@ -99,7 +99,6 @@ end
 
     end
 
-%     nro
     %alt slice
 
     % nx yönü
@@ -116,8 +115,6 @@ end
     end
 
     fprintf('m Parameter number=%d\n',length(m));
-
-%     c=0;
     for i=1:size(EL,1)
         ii=EL(i,21);
         jj=EL(i,22);
@@ -128,15 +125,6 @@ end
         else
         EL(i,24)=nro(jj,ii,kk);
         end
-
-%         if(EL(i,24)==-1)
-%         al=NK(jj:jj+1,ii:ii+1,kk:kk+1,3);al=al(:);
-%         if(mean(al)>0)
-%         c=c+1;
-%         EL(i,24)=-2;
-%         nro(jj,ii,kk)=-2;
-%         end
-%         end
     end
 
     al=nro(:,:,ebhava+1:end);
@@ -145,9 +133,6 @@ end
     nro(:,:,ebhava+1:end)=al;
     fprintf('There are %d water blocks\n',nnz(ii));
 
-    % ii=nro<-1;
-    % nro(ii)=-2;
-    % fprintf('There are %d water blocks\n',nnz(ii));
 
 end
 

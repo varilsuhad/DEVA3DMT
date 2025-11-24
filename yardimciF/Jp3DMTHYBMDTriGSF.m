@@ -72,8 +72,6 @@ for i=1:nf
     if(relres>set.limDigerGN*ek)
     fprintf('warning -> relres=%e but the limit is set to %e, frequency=%fHz\n',relres,set.limDigerGN*ek,f);
     end
-
-    % if(relres>10^-8)
     if(relres>set.limDigerGN*ek)
 
     fprintf('solving again due to very low accuracy\n');

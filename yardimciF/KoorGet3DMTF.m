@@ -31,7 +31,6 @@ if(mf<10^-12)
 end
 
 if(i==10 && mf>10^-12)
-% %     error('a,b,c kestiremedi\n');
 err=-1;
 end
 end
@@ -41,7 +40,6 @@ b=m(2);
 c=m(3);
 
 if(a<-1 || a>1 || c<-1 || c>1)
-% fprintf('Yanlış var a=%f b=%f c=%f\n',a,b,c);
 err=-2;
 end
 

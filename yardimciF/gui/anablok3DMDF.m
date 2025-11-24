@@ -26,8 +26,6 @@ c=c+1;
 dz(c)=dz(c-1)*ks;
 tot=tot+dz(c);
 end
-
-% ro=ones(1,1,length(dz))*rort;
 dz=dz';
 fprintf('Maximum Depth= %.1fkm and minimum block height(sd) = %.2fm\n z-dir block number=%d\n',ma/1000,st,c);
 

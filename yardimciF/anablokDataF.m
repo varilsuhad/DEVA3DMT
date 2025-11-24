@@ -8,7 +8,6 @@ set.autosd=1;
 dz=anablok3DMDF(f,set);
 if(set.initial1D==1)
     [Zssq,Wssq] = SSqAverageF(data);
-%     set.MT1Dfigures=1;
     [roi,~,~]=invert1DF(Zssq,Wssq,dz(:),f,set);
 else
     roi=ones(size(dz))*set.iro;
@@ -21,7 +20,6 @@ fprintf('Medium maximum depth=%.1fkm and reachable max depth=%.1fkm\n',sum(dz)/1
 %%% Eğer erişilen derinlik daha kısaysa dzleri tekrar oluştur
 %%% ve tekrar 1D fit yap
 if(sum(dz)>zmax(end))
-%     fprintf('Medium maximum depth=%.1fkm and reachable max depth=%.1fkm\n  KIRPTIM\n',sum(dz),zmax(end));
     set.manualsd=zmax(end);
     set.autosd=0;
     set.sdro=roa(1);

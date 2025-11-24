@@ -78,43 +78,9 @@ for i=1:tot
 
       veri.Det(i,1)=sqrt((Z(1,1)^2+Z(1,2)^2+Z(2,1)^2+Z(2,2)^2)/2);
 
-%       [UT] =wecmannhes1(C,Z0);
-%       C0=eye(2);
-%       [UT0] =wecmannhes1(C0,Z0);
-%
-%       veri.UT(i,:)=UT;
-%       veri.UT0(i,:)=UT0;
 
-%       V=PtoParametersvd(Z0);
-%       [tzxx,tzxy,tzyx,tzyy,tcxx,tcxy,tcyx,tcyy] = weckmannturevF(C,Z0);
-%       veri.UTxx1(i,:)=tzxx;
-%       veri.UTxy1(i,:)=tzxy;
-%       veri.UTyx1(i,:)=tzyx;
-%       veri.UTyy1(i,:)=tzyy;
-%       veri.UTxx2(i,:)=tcxx;
-%       veri.UTxy2(i,:)=tcxy;
-%       veri.UTyx2(i,:)=tcyx;
-%       veri.UTyy2(i,:)=tcyy;
 
-% PtoParametersvd
 
-%       V=PtoParameterForward(Z0);
-%       V=PtoParametersvd(Z0);
-%
-%       veri.V(i,:)=V;
-%       [tzxx,tzxy,tzyx,tzyy] = parameterturevF(Z);
-%       veri.Vkatxx(i,:)=tzxx;
-%       veri.Vkatxy(i,:)=tzxy;
-%       veri.Vkatyx(i,:)=tzyx;
-%       veri.Vkatyy(i,:)=tzyy;
-%
-%       V2=PtoParameterForward(Z);
-%       veri.V2(i,:)=V2;
-%       [tzxx,tzxy,tzyx,tzyy] = parameterturev2F(Z);
-%       veri.V2katxx(i,:)=tzxx;
-%       veri.V2katxy(i,:)=tzxy;
-%       veri.V2katyx(i,:)=tzyx;
-%       veri.V2katyy(i,:)=tzyy;
 
 end
 
