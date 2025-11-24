@@ -1,6 +1,4 @@
 function [J] = Jacobian1DF(ro,dz,f,set)
-%UNTÝTLED3 Summary of this function goes here
-%   Detailed explanation goes here
 
 [Z,go1,faz1] = MT1DF(dz,ro,f);
 

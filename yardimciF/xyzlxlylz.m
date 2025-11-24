@@ -1,6 +1,4 @@
 function [x,y,z,lx,ly,lz ] = xyzlxlylz(x,y,z,lx,ly,lz,NK,i,j,k)
-%UNTÝTLED6 Summary of this function goes here
-%   Detailed explanation goes here
 x(1)=NK(j,i,k,1);
 x(2)=NK(j,i+1,k,1);   
 x(3)=NK(j+1,i+1,k,1); 

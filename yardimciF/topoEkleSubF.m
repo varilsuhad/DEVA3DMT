@@ -1,7 +1,5 @@
 function [aa] = topoEkleSubF(nhz,goal,ebhava,ek)
-%UNTÝTLED Summary of this function goes here
 
-% ek=0.5;
 
 kati=1+ek;
 katg=1-ek;

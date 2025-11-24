@@ -1,5 +1,4 @@
 function [NK,nz1] = topoEkle3DMTF(NK,ebhava,z,nhz,ek)
-%UNTÝTLED2 Summary of this function goes here
 
 [nny,nnx,~,~]=size(NK);
 

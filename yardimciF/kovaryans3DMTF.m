@@ -1,5 +1,4 @@
 function [C] = kovaryans3DMTF(NK,param,ekblokx,ekbloky,ekblokz,ebhava)
-%UNTÝTLED6 Summary of this function goes here
 
 [nny,nnx,nnz,~]=size(NK);
 ny=nny-1;
@@ -112,7 +111,7 @@ for j=ekbloky+1:ny-ekbloky
             Salt=u1+u2;
             
             
-            %ön
+            %Ã¶n
             x1=x(1);x2=x(2);x3=x(5);
             y1=y(1);y2=y(2);y3=y(5);
             z1=z(1);z2=z(2);z3=z(5);            

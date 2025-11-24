@@ -1,6 +1,4 @@
 function [Z,roro,faz] = MT1DF(dz,ro,f)
-%UNTÝTLED Summary of this function goes here
-%   Detaled explanation goes here
 
 nf=length(f);
 

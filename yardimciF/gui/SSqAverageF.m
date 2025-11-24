@@ -1,6 +1,4 @@
 function [Zssq,Vssq] = SSqAverageF(data)
-%UNTÝTLED Summary of this function goes here
-%   Detailed explanation goes here
 
 [nf,ni,~]=size(data);
 

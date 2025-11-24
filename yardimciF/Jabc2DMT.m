@@ -1,6 +1,4 @@
 function [JJ,dd] = Jabc2DMT( x,z,a,b,J,ok)
-%UNTÝTLED4 Summary of this function goes here
-%   Detailed explanation goes here
 
 
 ka=[-1 +1 +1 -1];

@@ -1,6 +1,4 @@
 function [JJ,dd] = Jabc3DMTF( x,y,z,a,b,c,JJ)
-%UNTÝTLED4 Summary of this function goes here
-%   Detailed explanation goes here
 
 
 q1=-(1-b)*(1-c);
