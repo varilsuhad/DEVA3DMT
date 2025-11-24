@@ -1,3 +1,5 @@
+% © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
+% Contact: deniz.varilsuha@itu.edu.tr
 function [base,F,set,WF,ddi,wddi] = deltad3DMTMDSF(base,set,uu)
 
 ddi=0;

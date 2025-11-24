@@ -1,3 +1,5 @@
+% © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
+% Contact: deniz.varilsuha@itu.edu.tr
 function [ro,mf,F] = invert1DF(d,W,dz,f,set)
 
 if(set.MT1Dfigures==1)

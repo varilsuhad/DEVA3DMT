@@ -1,3 +1,5 @@
+% © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
+% Contact: deniz.varilsuha@itu.edu.tr
 function [] = saveVars3DMTF(base,set,F,ii,path0,ok,r0,s1,y1,ro1)
 
 

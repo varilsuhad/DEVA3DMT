@@ -1,3 +1,5 @@
+% © 2020–2025 Deniz Varılsüha — Non-commercial research use only. See LICENSE.
+% Contact: deniz.varilsuha@itu.edu.tr
 function A = csr2sparse(val, row_ptr, col_ind,n)
 %CSR2SPARSE Convert from CSR to a MATLAB sparse matrix.
 %   To convert a CSC matrix instead of CSR matrix to a sparse matrix
