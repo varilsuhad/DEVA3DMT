@@ -155,5 +155,5 @@ configuration and will be significantly slower.
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/<your-username>/DEVA3DMT-light.git
+   https://github.com/varilsuhad/DEVA3DMT.git
 
