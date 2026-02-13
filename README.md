@@ -25,11 +25,12 @@ please contact the author (see below).
 Questions, bug reports, or requests for access to the full
 multi-GPU / mesh-decoupled version of DEVA3DMT:
 
+https://zenodo.org/records/17715316
+
 **Author** : Deniz Varılsüha
 
 **Email** : deniz.varilsuha@itu.edu.tr
 
-https://zenodo.org/records/17715316
 ---
 
 ## Main features
