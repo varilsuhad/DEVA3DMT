@@ -29,6 +29,7 @@ multi-GPU / mesh-decoupled version of DEVA3DMT:
 
 **Email** : deniz.varilsuha@itu.edu.tr
 
+https://zenodo.org/records/17715316
 ---
 
 ## Main features
